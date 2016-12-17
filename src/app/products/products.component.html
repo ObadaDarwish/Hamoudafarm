@@ -1,0 +1,17 @@
+<div class="ProductBody">
+  <div class="ProductBodyBackground">
+    <img src="../../assets/images/farm2.jpg" alt=""></div>
+
+  <div class="ProductBodyContainer container" >
+    <div class="ProductTitle">
+      <p>Products</p>
+    </div>
+    <div class="Product col-lg-12 " *ngFor="let product of products">
+      <div class="row">
+        <div class="productBlock col-lg-2"><p>Name : {{product[0]}}</p></div>
+        <div class="productBlock col-lg-4"><p>Production/Year : {{product[1]}}</p></div>
+      </div>
+
+  </div>
+</div>
+  </div>

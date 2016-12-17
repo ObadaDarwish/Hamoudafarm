@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import {NewsFeedModule} from './news-feed/news-feed.module';
 import {MainRouting} from './app.routes';
-
+import {ProductsModule} from './products/products.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +19,7 @@ import {MainRouting} from './app.routes';
     HttpModule,
     LandingPageModule,
     NewsFeedModule,
+    ProductsModule,
     MainRouting
   ],
   providers: [],

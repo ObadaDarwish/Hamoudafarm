@@ -254,6 +254,57 @@
   display: block;
   margin-left: 65%;
 }
+/*======================================================= products view =====================*/
+.ProductBody{
+  position: relative;
+}
+.ProductBody .ProductBodyBackground{
+  position: absolute;
+  width: 100%;
+}
+.ProductBody .ProductBodyBackground img{
+  width: 100%;
+}
+.ProductBody .ProductBodyContainer{
+  margin-top: 12%;
+  margin-left: 12%;
+  position: absolute;
+}
+/*.ProductBody .ProductBodyContainer .row{*/
+  /*height: auto;*/
+/*}*/
+.ProductBody .productBlock{
+  text-align: center;
+  margin-bottom: 1%;
+  background-color: #0d4b50;
+  height: 60px;
+  padding-top: 1.5%;
+}
+.ProductBody .productBlock p{
+  color: #ffffff;
+  font-family: Georgia,sans-serif;
+  font-size: 18px;
+}
+.ProductTitle{
+  position: relative;
+  display: block;
+  text-align: center;
+  width: 200px;
+}
+.ProductTitle p::after{
+  content: ' ';
+  height: 1px;
+  width: 30%;
+  display: block;
+  background-color: orange;
+  margin-left: 35%;
+
+}
+ .ProductTitle p{
+  font-family: Georgia,sans-serif;
+  font-size: 30px;
+   color: #ffffff;
+}
 /*=======================mobile view ========================================*/
 @media screen and (max-height: 740px) and (max-width: 500px) {
   #motoLandingText1 {
