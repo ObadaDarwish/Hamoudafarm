@@ -20,7 +20,6 @@ export class NewsFeedComponent implements OnInit {
     this.newsfeed.getNewsFeed().subscribe(
       (newsfeed)=> {
         this.NewsFeed = newsfeed;
-        console.log(this.NewsFeed);
         for (var x = 0; x < newsfeed.length; x++) {
           this.temp.push(newsfeed[x][1]);
           this.img.push(this.temp[x].split(","));
@@ -28,7 +27,6 @@ export class NewsFeedComponent implements OnInit {
             this.imgArraylenght = this.img[x].length;
         }
         this.numbers = Array(this.imgArraylenght).fill().map((x, i)=>i);
-        console.log(this.img);
       }
       , (error)=> {
         console.log("Can not load Donuts : " + error);

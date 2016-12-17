@@ -2,27 +2,27 @@
   <div class="newsfeedBackground"><img src="../../assets/images/farm2.jpg" alt=""></div>
   <div class="newsfeedPostContainer container" >
     <div class="Post col-lg-12 " *ngFor="let posts of NewsFeed;let upperindex=index">
-      <div class="row">
+      <div class="row" *ngIf="posts[0]">
         <div class="col-lg-4  Title"><p>{{posts[0]}}
         </p></div>
       </div>
-      <div class="row PostPictures">
+      <div class="row PostPictures" *ngIf="numbers">
         <div *ngFor="let number of numbers;let index=index">
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" *ngIf="img[upperindex][index]">
           <img src="../../assets/images/{{img[upperindex][index]}}" alt="">
         </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row" *ngIf="posts[2]">
         <iframe  width="650" height="315"
                 [src]="(posts[2]) | safe"></iframe>
       </div>
-      <div class="row">
+      <div class="row" *ngIf="posts[3]">
         <div class="col-lg-12  PostCaption"><p>
         {{posts[3]}}
         </p></div>
       </div>
-      <div class="row">
+      <div class="row" *ngIf="posts[4]">
         <div class="col-lg-4  PostDate"><p> POSTED ON  : {{posts[4]}}
         </p></div>
       </div>
