@@ -10,7 +10,7 @@ export class NewsFeedComponent implements OnInit {
   temp: Array<any> = [];
   img: Array<any> = [];
   imgArraylenght: number = 0;
-  numbers: number;
+  numbers: Array<number>;
 
   constructor(private newsfeed: NewsFeedService) {
 
@@ -26,7 +26,7 @@ export class NewsFeedComponent implements OnInit {
           if (this.imgArraylenght < this.img[x].length)
             this.imgArraylenght = this.img[x].length;
         }
-        this.numbers = Array(this.imgArraylenght).fill().map((x, i)=>i);
+        this.numbers = Array(this.imgArraylenght).fill(this.imgArraylenght).map((x, i)=>i);
       }
       , (error)=> {
         console.log("Can not load Donuts : " + error);

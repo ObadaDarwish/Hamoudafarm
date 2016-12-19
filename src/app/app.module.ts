@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import {NewsFeedModule} from './news-feed/news-feed.module';
 import {MainRouting} from './app.routes';
 import {ProductsModule} from './products/products.module';
+import {GalleryModule} from './gallery/gallery.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +21,7 @@ import {ProductsModule} from './products/products.module';
     LandingPageModule,
     NewsFeedModule,
     ProductsModule,
+    GalleryModule,
     MainRouting
   ],
   providers: [],

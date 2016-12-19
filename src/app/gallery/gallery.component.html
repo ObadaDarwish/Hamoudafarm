@@ -1,0 +1,21 @@
+<div class="Gallerybody">
+  <div class="GalleryBackground">
+  <img src="../../assets/images/farm.jpg" alt="">
+  </div>
+
+  <div class="GalleryContainer ">
+    <div class="Title GalleryTitle">
+      <p>Gallery</p>
+    </div>
+    <div class="row ">
+      <div *ngFor="let images of img">
+        <div *ngFor="let imgArray of numbers;let index=index">
+          <div class="col-lg-3 galleryItem" *ngIf="images[index]">
+            <img src="../../assets/images/{{images[index]}}" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

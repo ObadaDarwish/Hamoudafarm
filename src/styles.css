@@ -171,7 +171,8 @@
 }
 /*========================================= news feed =======================================*/
 .newsFeedBody{
-  position: relative;
+  position: absolute;
+  width: 100%;
 }
 .newsFeedBody .newsfeedBackground{
   position: absolute;
@@ -183,30 +184,12 @@
 
 /*===========news feed post ===============*/
 .newsfeedPostContainer{
-  position: absolute;
+  position: relative;
   margin-left: 12%;
   margin-top: 12%;
   margin-bottom: 3%;
 }
-.newsfeedPostContainer .Title{
-  position: relative;
-  display: block;
-  text-align: center;
-  margin-left: 35%;
-  margin-top: 2%;
-}
-.newsfeedPostContainer .Title p::after{
-  content: ' ';
-  height: 1px;
-  width: 50%;
-  display: block;
-  background-color: orange;
-  margin-left: 25%;
-}
-.newsfeedPostContainer .Title p{
-  font-family: Georgia,sans-serif;
-  font-size: 30px;
-}
+
 .newsfeedPostContainer .Post .PostPictures img {
   width: 95%;
 }
@@ -285,13 +268,14 @@
   font-family: Georgia,sans-serif;
   font-size: 18px;
 }
-.ProductTitle{
+/*   =========================================  Title  ===========================*/
+.Title{
   position: relative;
   display: block;
   text-align: center;
   width: 200px;
 }
-.ProductTitle p::after{
+.Title p::after{
   content: ' ';
   height: 1px;
   width: 30%;
@@ -300,10 +284,55 @@
   margin-left: 35%;
 
 }
- .ProductTitle p{
+.Title p{
   font-family: Georgia,sans-serif;
   font-size: 30px;
-   color: #ffffff;
+  color: #ffffff;
+}
+.newsfeedTitle{
+  margin-left: 43%;
+  margin-top: 1%;
+}
+.newsfeedTitle p{
+  font-family: Georgia,sans-serif;
+  font-size: 30px;
+  color: gray;
+}
+.GalleryTitle{
+  margin-left: 42%;
+}
+ /*===========================  gallery ==============================*/
+
+.Gallerybody{
+  position: absolute;
+  width: 100%;
+}
+.GalleryBackground{
+  position:absolute ;
+  width: 100%;
+}
+.Gallerybody img{
+  width: 100%;
+}
+.GalleryContainer{
+  position: relative;
+  margin-top: 8%;
+  padding: 3%;
+}
+.GalleryContainer .row{
+  margin: 0%;
+  padding: 0.5%;
+  padding-top: 2%;
+  border: 1px solid #efe7e7;
+  background-color: #ffffff;
+}
+.Gallerybody .GalleryContainer  img{
+  width: 95%;
+}
+.Gallerybody .GalleryContainer .galleryItem
+{
+  position: relative;
+  margin-bottom: 1%;
 }
 /*=======================mobile view ========================================*/
 @media screen and (max-height: 740px) and (max-width: 500px) {

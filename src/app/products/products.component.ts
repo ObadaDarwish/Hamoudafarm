@@ -13,7 +13,6 @@ products:any;
     this.product.getProducts().subscribe(
       (products)=> {
       this.products=products;
-        console.log(this.products);
       }
       , (error)=> {
         console.log("Can not load products : " + error);

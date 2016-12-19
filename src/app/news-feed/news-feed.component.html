@@ -3,7 +3,7 @@
   <div class="newsfeedPostContainer container" >
     <div class="Post col-lg-12 " *ngFor="let posts of NewsFeed;let upperindex=index">
       <div class="row" *ngIf="posts[0]">
-        <div class="col-lg-4  Title"><p>{{posts[0]}}
+        <div class="col-lg-4 Title newsfeedTitle"><p>{{posts[0]}}
         </p></div>
       </div>
       <div class="row PostPictures" *ngIf="numbers">

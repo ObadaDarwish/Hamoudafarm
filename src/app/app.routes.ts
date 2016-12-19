@@ -6,11 +6,13 @@ import {Routes, RouterModule} from '@angular/router';
 import {LandingPageComponent} from './landing-page/landing-page.component';
 import {NewsFeedComponent} from './news-feed/news-feed.component';
 import {ProductsComponent} from './products/products.component';
+import  {GalleryComponent} from './gallery/gallery.component';
 const MainRoute: Routes = [
   {path: '', redirectTo: 'Home', pathMatch: 'full'},
   {path: 'Home', component:LandingPageComponent },
   {path: 'NewsFeed', component:NewsFeedComponent},
-  {path: 'Products', component:ProductsComponent}
+  {path: 'Products', component:ProductsComponent},
+  {path: 'Gallery', component:GalleryComponent}
 
 
 
