@@ -250,20 +250,30 @@
 }
 .ProductBody .ProductBodyContainer{
   margin-top: 12%;
-  margin-left: 12%;
+width: 100%;
   position: absolute;
 }
-/*.ProductBody .ProductBodyContainer .row{*/
-  /*height: auto;*/
-/*}*/
-.ProductBody .productBlock{
+.ProductBody .ProductBodyContainer .row{
+width: 100%;
+margin-left: 0;}
+
+.ProductBody .Product{
   text-align: center;
-  margin-bottom: 1%;
   background-color: #0d4b50;
-  height: 60px;
+  height: 310px;
   padding-top: 1.5%;
+  margin: 5px;
+  margin-bottom: 10%;
 }
-.ProductBody .productBlock p{
+.ProductBody .Product img{
+  width: 100%;
+  height: 200px;
+}
+.ProductBody .Product .productSection{
+  width: 100%;
+  margin-top: 4%;
+}
+.ProductBody .Product p{
   color: #ffffff;
   font-family: Georgia,sans-serif;
   font-size: 18px;
@@ -323,16 +333,33 @@
   margin: 0%;
   padding: 0.5%;
   padding-top: 2%;
-  border: 1px solid #efe7e7;
-  background-color: #ffffff;
 }
 .Gallerybody .GalleryContainer  img{
   width: 95%;
+  height: 230px;
 }
 .Gallerybody .GalleryContainer .galleryItem
 {
   position: relative;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
+}
+
+/*============================ adminlogin ==================*/
+.adminloginBody{
+  position: relative;
+  width: 100%;
+}
+.login{
+  position: absolute;
+  margin-top: 15%;
+  width: 35%;
+  margin-left: 33%;
+  border: 1px solid #deecde;
+  padding: 2%;
+}
+#submitbutton{
+  margin-top: 6%;
+  margin-left: 41%;
 }
 /*=======================mobile view ========================================*/
 @media screen and (max-height: 740px) and (max-width: 500px) {

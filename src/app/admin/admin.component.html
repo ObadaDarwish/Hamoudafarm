@@ -1,0 +1,11 @@
+<div class="adminloginBody">
+  <div class="login container">
+    <form [formGroup]="loginGroup" (ngSubmit)="login(loginGroup.value)">
+      <label for="email">Email/username:</label>
+      <input type="text" class="form-control" id="email" formControlName="username">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" formControlName="password">
+      <button id="submitbutton" type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+</div>
