@@ -11,6 +11,8 @@ import {ProductsModule} from './products/products.module';
 import {GalleryModule} from './gallery/gallery.module';
 import {AdminModule} from './admin/admin.module';
 import {AdminPanelModule} from './admin-panel/admin-panel.module';
+import {FileUploadModule} from 'ng2-file-upload';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,8 @@ import {AdminPanelModule} from './admin-panel/admin-panel.module';
     GalleryModule,
     AdminModule,
     AdminPanelModule,
-    MainRouting
+    MainRouting,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

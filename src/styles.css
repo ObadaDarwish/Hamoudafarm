@@ -6,54 +6,45 @@
   position: absolute;
   width: 100%;
   height: 80px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
 }
 
 .Headeroverlay {
   background-color: #000000;
   opacity: 0.3;
   position: absolute;
-  width: 100%;
+  width: inherit;
   height: inherit;
   z-index: 1;
 }
-
-.Navigation {
-  position: absolute;
-  margin-top: 0%;
-  margin-left: 17%;
-}
-
-.Navigation .row .tab {
+.header .navtab {
   z-index: 2;
+  height: inherit;
   width: 200px;
-  height: 80px;
-
+  text-align: center;
+  padding-top: 2%;
 }
-
-.Navigation .row .tab:hover {
+.header .navtab:hover {
   background-color: #000000;
   cursor: pointer;
 }
-
-.Navigation .row .tab:hover::after {
+.header .navtab:hover::after {
   display: block;
   content: ' ';
   height: 2px;
   width: 100%;
   background-color: #ff9100;
-  margin-top: 46%;
+  margin-top: 13%;
 }
-
-.Navigation .row a {
-  position: absolute;
+.header .navtab a {
+  position: relative;
   z-index: 2;
   color: #f5f5f5;
-  display: inline-block;
-  margin-top: 13%;
-  margin-left: 20%;
 }
 
-.Navigation .row a:hover {
+.header .navtab a:hover {
   color: #ffffff;
 }
 
@@ -67,40 +58,39 @@
   width: 100%;
 
 }
-
-.LandingBody #motoLandingText1 {
+.LandingBody .motowrapper{
   background-color: #000000;
+  text-align: center;
+  position: relative;
   padding: 10px;
+  margin-bottom: 2px;
+}
+.LandingBody .motoBlock{
+  margin-left: 32%;
+  margin-top: 20%;
   position: absolute;
-  margin-top: 19%;
-  margin-left: 33%;
-  font-size: 40px;
+}
+.LandingBody .motowrapper p{
+  font-size: 27px;
+  font-family: Georgia, sans-serif;
   color: #ffffff;
   font-weight: bold;
 }
+.LandingBody #motoLandingText2
+{
+  width: 550px;
 
-.LandingBody #motoLandingText2 {
-  background-color: #000000;
-  padding: 10px;
-  color: #ffffff;
-  margin-top: 27%;
-  position: absolute;
-  margin-left: 40%;
-  font-size: 27px;
-  font-family: Georgia, sans-serif;
 }
-
-.LandingBody #motoLandingText3 {
-  background-color: #000000;
-  padding: 10px;
-  color: #ffffff;
-  position: absolute;
-  font-size: 27px;
-  font-family: Georgia, sans-serif;
-  margin-top: 24%;
-  margin-left: 35%;
+.LandingBody #motoLandingText1
+ {
+   width: 400px;
+  margin-left: 14%;
+ }
+.LandingBody #motoLandingText3
+{
+  margin-left: 23%;
+  width: 300px;
 }
-
 .LandingBody span {
   color: orange;
 
@@ -116,8 +106,6 @@
   margin-top: 15%;
   margin-left: 5%;
 }
-
-
 
 .LandingBody #Landinglogo {
   width: 300px;
@@ -143,16 +131,15 @@
 }
 
 .LandingBody .newsFeedButton {
-  padding: 2%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 1%;
+  padding-left: 4%;
+  padding-right: 4%;
   position: absolute;
   margin-top: 53%;
   margin-left: 41%;
-  background-color: transparent;
+  background-color: #ff8100;
   border: 1px solid gray;
-  border-radius: 10px;
-  /*box-shadow: 0px -4px 0px 1px #888888;*/
+  border-radius: 0px;
 }
 
 .LandingBody .newsFeedButton:hover {
@@ -169,21 +156,24 @@
 .LandingBody .newsFeedButton a:hover {
   color: #ffffff;
 }
+
 /*========================================= news feed =======================================*/
-.newsFeedBody{
+.newsFeedBody {
   position: absolute;
   width: 100%;
 }
-.newsFeedBody .newsfeedBackground{
+
+.newsFeedBody .newsfeedBackground {
   position: absolute;
   width: 100%;
 }
+
 .newsFeedBody .newsfeedBackground img {
   width: 100%;
 }
 
 /*===========news feed post ===============*/
-.newsfeedPostContainer{
+.newsfeedPostContainer {
   position: relative;
   margin-left: 12%;
   margin-top: 12%;
@@ -191,26 +181,31 @@
 }
 
 .newsfeedPostContainer .Post .PostPictures img {
-  width: 95%;
+  width: 300px;
+  height: 300px;
 }
-.newsfeedPostContainer .Post{
+
+.newsfeedPostContainer .Post {
   position: relative;
   background-color: #ffffff;
   border: 1px solid #efe7e7;
   margin-bottom: 5%;
 }
+
 .newsfeedPostContainer .PostPictures {
   position: relative;
-  display: block;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  margin-left: 1%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content:space-around;
 }
-.newsfeedPostContainer .PostPictures div{
+
+.newsfeedPostContainer .PostPictures div {
   margin-top: 1%;
   margin-bottom: 1%;
+
 }
-.newsfeedPostContainer .row iframe{
+
+.newsfeedPostContainer .row iframe {
   width: 650px;
   height: 315px;
   position: relative;
@@ -220,44 +215,52 @@
   margin-left: 22%;
 }
 
-.newsfeedPostContainer .PostCaption{
+.newsfeedPostContainer .PostCaption {
   text-align: center;
   position: relative;
   display: block;
   margin-top: 2%;
   margin-bottom: 2%;
 }
-.newsfeedPostContainer .PostCaption p{
+
+.newsfeedPostContainer .PostCaption p {
   font-size: 20px;
-  font-family: Georgia,sans-serif;
+  font-family: Georgia, sans-serif;
 }
-.newsfeedPostContainer .PostDate{
+
+.newsfeedPostContainer .PostDate {
   text-align: center;
   position: relative;
   display: block;
   margin-left: 65%;
 }
+
 /*======================================================= products view =====================*/
-.ProductBody{
+.ProductBody {
   position: relative;
 }
-.ProductBody .ProductBodyBackground{
-  position: absolute;
-  width: 100%;
-}
-.ProductBody .ProductBodyBackground img{
-  width: 100%;
-}
-.ProductBody .ProductBodyContainer{
-  margin-top: 12%;
-width: 100%;
-  position: absolute;
-}
-.ProductBody .ProductBodyContainer .row{
-width: 100%;
-margin-left: 0;}
 
-.ProductBody .Product{
+.ProductBody .ProductBodyBackground {
+  position: absolute;
+  width: 100%;
+}
+
+.ProductBody .ProductBodyBackground img {
+  width: 100%;
+}
+
+.ProductBody .ProductBodyContainer {
+  margin-top: 12%;
+  width: 100%;
+  position: absolute;
+}
+
+.ProductBody .ProductBodyContainer .row {
+  width: 100%;
+  margin-left: 0;
+}
+
+.ProductBody .Product {
   text-align: center;
   background-color: #0d4b50;
   height: 310px;
@@ -265,27 +268,36 @@ margin-left: 0;}
   margin: 5px;
   margin-bottom: 10%;
 }
-.ProductBody .Product img{
+
+.ProductBody .Product img {
   width: 100%;
   height: 200px;
 }
-.ProductBody .Product .productSection{
+
+.ProductBody .Product .productSection {
   width: 100%;
   margin-top: 4%;
 }
-.ProductBody .Product p{
+
+.ProductBody .Product p {
   color: #ffffff;
-  font-family: Georgia,sans-serif;
+  font-family: Georgia, sans-serif;
   font-size: 18px;
 }
+
+.ProductsTitle {
+  margin-left: 42%;
+}
+
 /*   =========================================  Title  ===========================*/
-.Title{
+.Title {
   position: relative;
   display: block;
   text-align: center;
-  width: 200px;
+  width: 300px;
 }
-.Title p::after{
+
+.Title p::after {
   content: ' ';
   height: 1px;
   width: 30%;
@@ -294,62 +306,73 @@ margin-left: 0;}
   margin-left: 35%;
 
 }
-.Title p{
-  font-family: Georgia,sans-serif;
+
+.Title p {
+  font-family: Georgia, sans-serif;
   font-size: 30px;
   color: #ffffff;
 }
-.newsfeedTitle{
-  margin-left: 43%;
+
+.newsfeedTitle {
+  margin-left: 40%;
   margin-top: 1%;
 }
-.newsfeedTitle p{
-  font-family: Georgia,sans-serif;
+
+.newsfeedTitle p {
+  font-family: Georgia, sans-serif;
   font-size: 30px;
   color: gray;
 }
-.GalleryTitle{
+
+.GalleryTitle {
   margin-left: 42%;
 }
- /*===========================  gallery ==============================*/
 
-.Gallerybody{
+/*===========================  gallery ==============================*/
+
+.Gallerybody {
   position: absolute;
   width: 100%;
 }
-.GalleryBackground{
-  position:absolute ;
+
+.GalleryBackground {
+  position: absolute;
   width: 100%;
 }
-.Gallerybody img{
+
+.Gallerybody img {
   width: 100%;
 }
-.GalleryContainer{
+
+.GalleryContainer {
   position: relative;
   margin-top: 8%;
   padding: 3%;
 }
-.GalleryContainer .row{
+
+.GalleryContainer .row {
   margin: 0%;
   padding: 0.5%;
   padding-top: 2%;
 }
-.Gallerybody .GalleryContainer  img{
+
+.Gallerybody .GalleryContainer img {
   width: 95%;
   height: 230px;
 }
-.Gallerybody .GalleryContainer .galleryItem
-{
+
+.Gallerybody .GalleryContainer .galleryItem {
   position: relative;
   margin-bottom: 2%;
 }
 
 /*============================ adminlogin ==================*/
-.adminloginBody{
+.adminloginBody {
   position: relative;
   width: 100%;
 }
-.login{
+
+.login {
   position: absolute;
   margin-top: 15%;
   width: 35%;
@@ -357,51 +380,71 @@ margin-left: 0;}
   border: 1px solid #deecde;
   padding: 2%;
 }
-#submitbutton{
+
+#submitbutton {
   margin-top: 6%;
   margin-left: 41%;
 }
+iframe{
+  width:650px;
+  height:315px;
+}
 /*=======================mobile view ========================================*/
 @media screen and (max-height: 740px) and (max-width: 500px) {
-  #motoLandingText1 {
+  .motoBlock{
     display: none;
   }
-
-  #motoLandingText2 {
-    display: none;
-  }
-
-  #motoLandingText3 {
-    display: none;
-  }
+.header{
+  height: 40px;
+}
 
   .LandingBody .newsFeedButton {
-    margin-top: 130%;
-    margin-left: 23%;
+    margin-left: 30%;
   }
 
   .LandingBody #Landinglogo {
-   display: none;
+    display: none;
   }
-  .LandingBody .Overlay{
+
+  .LandingBody .Overlay {
     display: none;
   }
 
   .LandingBody img {
-   height: 736px;
+    height: 736px;
 
   }
-  .header {
-    height: 400px;
+
+
+  .header .navtab {
+    width: inherit;
   }
-  .Navigation {
-    margin-left: 25%;
+
+  .header .navtab a {
+    font-size: 14px;
   }
-  .header .Headeroverlay
+  .header .navtab:hover::after {
+    display: none;
+  }
+  .LandingBody .newsFeedButton {
+    margin-left: 30%;
+    margin-top: 140%;
+  }
+  .GalleryTitle{
+    margin-left: 20%;
+  }
+  .ProductsTitle{
+    margin-left: 20%;
+  }
+  .newsfeedPostContainer{
+    margin-left: 0%;
+  }
+  iframe{
+    width: 380px !important;
+    margin-left: 0% !important;
+  }
+  .newsfeedTitle
   {
-    width:inherit
-  }
-  .header .row .tab{
-    border-bottom: 1px solid #ffffff;
+    margin-left: 22%;
   }
 }
