@@ -4,10 +4,12 @@ import { NewsFeedComponent } from './news-feed.component';
 import {MainRouting} from '../app.routes';
 import {NewsFeedService}from './news-feed.service';
 import {SafePipe} from '../pipes/safeUrl';
+import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 @NgModule({
   imports: [
     CommonModule,
-    MainRouting
+    MainRouting,
+    SlimLoadingBarModule
   ],
   declarations: [NewsFeedComponent,SafePipe],
   exports:[NewsFeedComponent],

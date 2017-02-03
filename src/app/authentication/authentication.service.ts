@@ -1,28 +1,30 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Http} from "@angular/http";
 import {Headers, RequestOptions} from "@angular/http";
-
+import {BehaviorSubject} from 'rxjs';
 @Injectable()
-export class AdminService {
+export class AuthenticationService {
 
-  constructor(private http:Http) { }
+  constructor(private http: Http) {
+  }
 
 
 
-  PostLogin(username,password) {
+  PostLogin(username, password) {
     let headers = new Headers();
     let options = new RequestOptions({headers: headers});
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');
     var body = JSON.stringify({
       username: username,
-      password:password
+      password: password
     });
-    return this.http.post(`http://localhost:8000/Login`, body,options )
+    return this.http.post(`http://localhost:8000/Login`, body, options)
       .map(response => {
-        return response;
+        return response._body;
       });
   }
+
 
 
 

@@ -21,31 +21,13 @@ export class AdminPanelComponent implements OnInit {
 
   ngOnInit() {
   }
-  // public uploader:FileUploader = new FileUploader({url: 'http://localhost:8000/fileupload',
-  // 'Access-Control-Allow-Headers':'X-Requested-With,content-type',
-  // 'Access-Control-Allow-Credentials':true,
-  // 'Access-Control-Allow-Origin':'http://localhost:4200'});
 
-  // fileChangeEvent(event: any) {
-  //   this.image = event.srcElement.files;
-  //   console.log(this.image);
-  // }
 
-  // postImage() {
-  //   this.admin.postImage(this.image[0]).subscribe(
-  //     (response)=> {
-  //       console.log("image uploaded : " + response);
-  //     }
-  //     , (error)=> {
-  //       console.log("Can not upload image : " + error);
-  //     });
-  //
-  // }
-  // postImage(){
-  //   this.admin.xhrPostImage([], this.image).then(result => {
-  //     console.log(result);
-  //   });
-  //
-  // }
+  fileChangeEvent(event: any) {
+    this.image = event.srcElement.files;
+    console.log(this.image);
+  }
+
+
 
 }

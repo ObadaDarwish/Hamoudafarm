@@ -9,14 +9,17 @@ import {NewsFeedModule} from './news-feed/news-feed.module';
 import {MainRouting} from './app.routes';
 import {ProductsModule} from './products/products.module';
 import {GalleryModule} from './gallery/gallery.module';
-import {AdminModule} from './admin/admin.module';
 import {AdminPanelModule} from './admin-panel/admin-panel.module';
 import {FileUploadModule} from 'ng2-file-upload';
-
+import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
+import {AuthenticationModule} from './authentication/authentication.module';
+import {loginGuard} from './guards/login';
+import { LostComponent } from './lost/lost.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    LostComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,12 +30,13 @@ import {FileUploadModule} from 'ng2-file-upload';
     NewsFeedModule,
     ProductsModule,
     GalleryModule,
-    AdminModule,
     AdminPanelModule,
     MainRouting,
-    FileUploadModule
+    FileUploadModule,
+    SlimLoadingBarModule,
+    AuthenticationModule
   ],
-  providers: [],
+  providers: [loginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

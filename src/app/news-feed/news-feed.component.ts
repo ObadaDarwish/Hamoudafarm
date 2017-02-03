@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NewsFeedService} from './news-feed.service';
+import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 @Component({
   selector: 'app-news-feed',
   templateUrl: './news-feed.component.html',
@@ -12,11 +13,14 @@ export class NewsFeedComponent implements OnInit {
   imgArraylenght: number = 0;
   numbers: Array<number>;
 
-  constructor(private newsfeed: NewsFeedService) {
+  constructor(private loading:SlimLoadingBarService,private newsfeed: NewsFeedService) {
 
   }
 
   ngOnInit() {
+    this.loading.start(()=>{
+      console.log('loading');
+    });
     this.newsfeed.getNewsFeed().subscribe(
       (newsfeed)=> {
         this.NewsFeed = newsfeed;
@@ -27,9 +31,11 @@ export class NewsFeedComponent implements OnInit {
             this.imgArraylenght = this.img[x].length;
         }
         this.numbers = Array(this.imgArraylenght).fill(this.imgArraylenght).map((x, i)=>i);
+        // this.loading.complete();
       }
       , (error)=> {
         console.log("Can not load Donuts : " + error);
+        // this.loading.complete();
       }
     );
   }
