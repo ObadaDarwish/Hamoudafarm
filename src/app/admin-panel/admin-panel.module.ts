@@ -4,6 +4,8 @@ import { AdminPanelComponent } from './admin-panel.component';
 import {MainRouting} from '../app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AdminPanelService} from './admin-panel.service';
+import { NewPostComponent } from './new-post/new-post.component';
+import { NewProductComponent } from './new-product/new-product.component';
 
 
 @NgModule({
@@ -13,7 +15,7 @@ import {AdminPanelService} from './admin-panel.service';
     FormsModule,
     ReactiveFormsModule,
   ],
-  declarations: [AdminPanelComponent],
+  declarations: [AdminPanelComponent, NewPostComponent, NewProductComponent],
   exports:[AdminPanelComponent],
   providers:[AdminPanelService]
 })

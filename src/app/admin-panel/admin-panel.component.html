@@ -1,7 +1,19 @@
-<form style="position:absolute;margin-top: 20%" [formGroup]="Admin" >
-  <!--<input type="file" (change)="fileChange($event)"/>-->
+<!--<form style="position:absolute;margin-top: 20%" [formGroup]="Admin" >-->
+<!--&lt;!&ndash;<input type="file" (change)="fileChange($event)"/>&ndash;&gt;-->
 
-  <input type="file" (change)="fileChange($event)" placeholder="Upload file" multiple>
+<!--<input type="file" (change)="fileChange($event)" placeholder="Upload file" multiple>-->
 
-  <button class="btn btn-primary" (click)="postImage()" type="submit">Upload</button>
-</form>
+<!--<button class="btn btn-primary" (click)="postImage()" type="submit">Upload</button>-->
+<!--</form>-->
+
+<div class="AdminBody">
+  <div class="AdminNavigation">
+    <div class="navItems item1" routerLink="./newpost"><i class="fa fa-2x fa-newspaper-o" aria-hidden="true"></i><p> New post</p></div>
+    <div class="navItems item2" routerLink="./newproduct"><i class="fa fa-2x fa-shopping-cart" aria-hidden="true"></i><p> New product</p></div>
+    <div class="navItems item3"><i class="fa fa-2x fa-ban" aria-hidden="true"></i><p>--</p></div>
+    <div class="navItems item4"><i class="fa fa-2x fa-ban" aria-hidden="true"></i><p>--</p></div>
+  </div>
+  <div class="adminOutlet">
+<router-outlet></router-outlet>
+  </div>
+</div>

@@ -40,8 +40,6 @@ export class AdminPanelComponent implements OnInit {
       }
 
       let headers = new Headers();
-      // headers.append('Content-Type', 'multipart/form-data');
-      // headers.append('Accept', 'application/json');
       let options = new RequestOptions({headers: headers});
       this.http.post(`http://localhost:8000/fileupload`, formData, options)
         .map(res => res)

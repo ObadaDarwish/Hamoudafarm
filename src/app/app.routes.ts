@@ -11,6 +11,8 @@ import {LoginComponent} from './authentication/login/login.component';
 import {AdminPanelComponent} from './admin-panel/admin-panel.component';
 import {loginGuard} from './guards/login';
 import {LostComponent}  from './lost/lost.component';
+import {NewPostComponent} from './admin-panel/new-post/new-post.component';
+import {NewProductComponent} from './admin-panel/new-product/new-product.component';
 
 const MainRoute: Routes = [
   {path: '', redirectTo: 'Home', pathMatch: 'full'},
@@ -19,7 +21,13 @@ const MainRoute: Routes = [
   {path: 'Products', component:ProductsComponent},
   {path: 'Gallery', component:GalleryComponent},
   {path: 'login', component:LoginComponent},
-  {path: 'AdminPanel', component:AdminPanelComponent, canActivate: [loginGuard]},
+  {path: 'AdminPanel', component:AdminPanelComponent, canActivate: [loginGuard],
+    children: [
+      /*  admin tools  */
+      {path: '', redirectTo: 'newpost', pathMatch: 'full'},
+      {path:'newpost',component:NewPostComponent},
+      {path:'newproduct',component:NewProductComponent}
+      ]},
   // ,canActivate: [loginGuard]
   {path: '**', redirectTo: '404', pathMatch: 'full'},
   {path: '404', component: LostComponent},

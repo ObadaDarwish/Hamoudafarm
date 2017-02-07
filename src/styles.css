@@ -344,8 +344,81 @@ body{
   width: 100%;
   margin-top: 1%;
 }
+/*===========================  Admin page ==============================*/
 
-/*===========================  gallery ==============================*/
+.AdminBody
+{
+  position: absolute;
+  width: 100%;
+}
+.AdminNavigation
+{
+  width: 100%;
+  background-color: #656464;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  margin-top: 6%;
+}
+.navItems{
+  width: 350px;
+  height: 140px;
+  margin: 1%;
+  text-align: center;
+  padding-top: 2%;
+}
+.navItems:hover{
+  cursor: pointer;
+}
+.navItems p{
+  color: #ffffff;
+  font-family: Georgia,sans-serif;
+  font-size: 28px;
+}
+.AdminNavigation .item1{
+  background-color: #68c9b6;
+}
+.AdminNavigation .item1:hover{
+  background-color: lightgray;
+}
+.AdminNavigation .item2{
+  background-color: #c3ca0a;
+}
+.AdminNavigation .item2:hover{
+  background-color: lightgray;
+}
+.AdminNavigation .item3{
+  background-color: #e27795;
+}
+.AdminNavigation .item3:hover{
+  background-color: lightgray;
+}
+.AdminNavigation .item4{
+  background-color: #a285c5;
+}
+.AdminNavigation .item4:hover{
+  background-color: lightgray;
+}
+.adminOutlet{
+  position: relative;
+  width: 80%;
+  height: 360px;
+  margin-top: 3%;
+  margin-left: 10%;
+  background-color: #ffffff;
+}
+.fa-newspaper-o
+{
+  color: #ffffff;
+}
+.fa-shopping-cart
+{
+  color: #ffffff;
+}
+.fa-ban{
+  color: #ffffff;
+}
+  /*===========================  gallery ==============================*/
 
 .Gallerybody {
   position: absolute;
