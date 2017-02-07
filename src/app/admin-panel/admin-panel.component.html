@@ -1,6 +1,7 @@
 <form style="position:absolute;margin-top: 20%" [formGroup]="Admin" >
-  <input type="file" (change)="fileChangeEvent($event)"/>
+  <!--<input type="file" (change)="fileChange($event)"/>-->
+
+  <input type="file" (change)="fileChange($event)" placeholder="Upload file" multiple>
 
   <button class="btn btn-primary" (click)="postImage()" type="submit">Upload</button>
 </form>
-

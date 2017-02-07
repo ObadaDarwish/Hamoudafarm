@@ -4,7 +4,7 @@ import { AdminPanelComponent } from './admin-panel.component';
 import {MainRouting} from '../app.routes';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AdminPanelService} from './admin-panel.service';
-import {FileUploadModule} from 'ng2-file-upload';
+
 
 @NgModule({
   imports: [
@@ -12,7 +12,6 @@ import {FileUploadModule} from 'ng2-file-upload';
     MainRouting,
     FormsModule,
     ReactiveFormsModule,
-    FileUploadModule
   ],
   declarations: [AdminPanelComponent],
   exports:[AdminPanelComponent],

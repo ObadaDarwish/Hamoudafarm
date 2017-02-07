@@ -10,7 +10,6 @@ import {MainRouting} from './app.routes';
 import {ProductsModule} from './products/products.module';
 import {GalleryModule} from './gallery/gallery.module';
 import {AdminPanelModule} from './admin-panel/admin-panel.module';
-import {FileUploadModule} from 'ng2-file-upload';
 import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {AuthenticationModule} from './authentication/authentication.module';
 import {loginGuard} from './guards/login';
@@ -32,9 +31,8 @@ import { LostComponent } from './lost/lost.component';
     GalleryModule,
     AdminPanelModule,
     MainRouting,
-    FileUploadModule,
     SlimLoadingBarModule,
-    AuthenticationModule
+    AuthenticationModule,
   ],
   providers: [loginGuard],
   bootstrap: [AppComponent]

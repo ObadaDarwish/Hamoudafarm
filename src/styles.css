@@ -1,8 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  background-color: #f7efef;
+}
+#loadingGif
+{
+  margin-left: 45%;
+  margin-top: 20%;
+}
+.slim-loading-bar {
+  background-color: #ff9100;
+}
 
 /*----------------------header-------------------------*/
 
 .header {
+  z-index: 4;
   position: absolute;
   width: 100%;
   height: 80px;
@@ -63,7 +75,9 @@
   text-align: center;
   position: relative;
   padding: 10px;
-  margin-bottom: 2px;
+  height: 60px;
+  margin-bottom: 1px;
+
 }
 .LandingBody .motoBlock{
   margin-left: 32%;
@@ -137,9 +151,8 @@
   position: absolute;
   margin-top: 53%;
   margin-left: 41%;
-  background-color: #ff8100;
-  border: 1px solid gray;
-  border-radius: 0px;
+  background-color: #000000;
+  border-radius: 5px;
 }
 
 .LandingBody .newsFeedButton:hover {
@@ -189,7 +202,7 @@
   position: relative;
   background-color: #ffffff;
   border: 1px solid #efe7e7;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
 }
 
 .newsfeedPostContainer .PostPictures {
@@ -286,7 +299,9 @@
 }
 
 .ProductsTitle {
-  margin-left: 42%;
+  text-align: center;
+  width: 100%;
+  margin-top: 1%;
 }
 
 /*   =========================================  Title  ===========================*/
@@ -294,16 +309,15 @@
   position: relative;
   display: block;
   text-align: center;
-  width: 300px;
 }
 
 .Title p::after {
   content: ' ';
   height: 1px;
-  width: 30%;
+  width: 10%;
   display: block;
   background-color: orange;
-  margin-left: 35%;
+  margin-left: 45%;
 
 }
 
@@ -314,7 +328,8 @@
 }
 
 .newsfeedTitle {
-  margin-left: 40%;
+  text-align: center;
+  width: 100%;
   margin-top: 1%;
 }
 
@@ -325,7 +340,9 @@
 }
 
 .GalleryTitle {
-  margin-left: 42%;
+  text-align: center;
+  width: 100%;
+  margin-top: 1%;
 }
 
 /*===========================  gallery ==============================*/
@@ -377,8 +394,9 @@
   margin-top: 15%;
   width: 35%;
   margin-left: 33%;
-  border: 1px solid #deecde;
+  border-top: 3px solid #cccbce;
   padding: 2%;
+  background-color: #ffffff;
 }
 
 #submitbutton {
