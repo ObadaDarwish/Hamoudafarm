@@ -34,7 +34,8 @@ import {SimpleNotificationsModule} from 'angular2-notifications/src/simple-notif
     MainRouting,
     SlimLoadingBarModule,
     AuthenticationModule,
-    SimpleNotificationsModule
+    SimpleNotificationsModule,
+
   ],
   providers: [loginGuard],
   bootstrap: [AppComponent]

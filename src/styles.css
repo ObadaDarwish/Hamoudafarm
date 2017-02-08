@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-  background-color: #f7efef;
+  background-color: #333333;
 }
 #loadingGif
 {
@@ -279,7 +279,7 @@ body{
 
 .ProductBody .Product {
   text-align: center;
-  background-color: #0d4b50;
+  background-color: rgb(247, 156, 28);
   height: 310px;
   padding-top: 1.5%;
   margin: 5px;
@@ -288,7 +288,7 @@ body{
 
 .ProductBody .Product img {
   width: 100%;
-  height: 200px;
+  height: 250px;
 }
 
 .ProductBody .Product .productSection {
@@ -383,33 +383,34 @@ body{
   background-color: #68c9b6;
 }
 .AdminNavigation .item1:hover{
-  background-color: lightgray;
+  background-color:#00d0ff;
 }
 .AdminNavigation .item2{
   background-color: #c3ca0a;
 }
 .AdminNavigation .item2:hover{
-  background-color: lightgray;
+  background-color: #00d0ff;
 }
 .AdminNavigation .item3{
   background-color: #e27795;
 }
 .AdminNavigation .item3:hover{
-  background-color: lightgray;
+  background-color: #00d0ff;
 }
 .AdminNavigation .item4{
   background-color: #a285c5;
 }
 .AdminNavigation .item4:hover{
-  background-color: lightgray;
+  background-color: #00d0ff;
 }
 .adminOutlet{
   position: relative;
-  width: 80%;
+  width: 95%;
   height: 360px;
-  margin-top: 3%;
-  margin-left: 10%;
-  background-color: #ffffff;
+  margin-top: 2%;
+  margin-left: 2.5%;
+  background-color: #656464;
+
 }
 .fa-newspaper-o
 {
@@ -456,6 +457,8 @@ body{
 }
 
 .Gallerybody .GalleryContainer .galleryItem {
+  display: flex;
+  justify-content: center;
   position: relative;
   margin-bottom: 2%;
 }
@@ -471,7 +474,8 @@ body{
   margin-top: 15%;
   width: 35%;
   margin-left: 33%;
-  border-top: 3px solid #cccbce;
+  border-top: 5px solid #ff8303;
+  box-shadow: 3px -1px 2px #ff8303;
   padding: 2%;
   background-color: #ffffff;
 }

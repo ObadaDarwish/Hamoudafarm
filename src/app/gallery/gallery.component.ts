@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {GalleryService} from './gallery.service';
 import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 
+
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -13,24 +14,27 @@ export class GalleryComponent implements OnInit {
   img: Array<any>;
   imgArraylenght: number = 0;
   numbers: Array<number>;
+  spinner: boolean;
 
-
-  constructor(private loading:SlimLoadingBarService,private gallery: GalleryService) {
+  constructor(private loading: SlimLoadingBarService, private gallery: GalleryService) {
     this.temp = [];
     this.img = [];
+    this.spinner = true;
   }
 
   ngOnInit() {
-    this.loading.start(()=>{console.log('loading')});
+    this.loading.start(()=> {
+      console.log('loading')
+    });
     this.gallery.getGallery().subscribe(
       (gallery)=> {
         this.Gallery = gallery;
         for (var x = 0; x < gallery.length; x++) {
           this.temp.push(gallery[x][0]);
           this.img.push(this.temp[x].split(","));
-          if (this.imgArraylenght < this.img[x].length){
+          if (this.imgArraylenght < this.img[x].length) {
             this.imgArraylenght = this.img[x].length;
-        }
+          }
         }
         this.numbers = Array(this.imgArraylenght).fill(this.imgArraylenght).map((x, i)=>i);
         this.loading.complete();
@@ -41,5 +45,7 @@ export class GalleryComponent implements OnInit {
       }
     );
   }
-
+  onLoad(){
+    this.spinner = false;
+  }
 }

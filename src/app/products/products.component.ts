@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProductsService} from './products.service';
 import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -8,7 +9,10 @@ import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 })
 export class ProductsComponent implements OnInit {
 products:any;
-  constructor(private loading:SlimLoadingBarService,private product:ProductsService) { }
+  spinner: boolean;
+  constructor(private loading:SlimLoadingBarService,private product:ProductsService) {
+    this.spinner = true;
+  }
 
   ngOnInit() {
     this.loading.start(()=>{console.log('loading')});
@@ -23,5 +27,7 @@ products:any;
       }
     );
   }
-
+  onLoad(){
+    this.spinner = false;
+  }
 }
