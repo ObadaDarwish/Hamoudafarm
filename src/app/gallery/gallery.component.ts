@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {GalleryService} from './gallery.service';
+import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
+
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
@@ -13,12 +15,13 @@ export class GalleryComponent implements OnInit {
   numbers: Array<number>;
 
 
-  constructor(private gallery: GalleryService) {
+  constructor(private loading:SlimLoadingBarService,private gallery: GalleryService) {
     this.temp = [];
     this.img = [];
   }
 
   ngOnInit() {
+    this.loading.start(()=>{console.log('loading')});
     this.gallery.getGallery().subscribe(
       (gallery)=> {
         this.Gallery = gallery;
@@ -30,9 +33,11 @@ export class GalleryComponent implements OnInit {
         }
         }
         this.numbers = Array(this.imgArraylenght).fill(this.imgArraylenght).map((x, i)=>i);
+        this.loading.complete();
       }
       , (error)=> {
         console.log("Can not load Gallery : " + error);
+        this.loading.complete();
       }
     );
   }

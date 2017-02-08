@@ -31,6 +31,10 @@ body{
   height: inherit;
   z-index: 1;
 }
+.slim-loading-bar{
+ position: relative;
+  background-color: #8e8d91;
+}
 .header .navtab {
   z-index: 2;
   height: inherit;

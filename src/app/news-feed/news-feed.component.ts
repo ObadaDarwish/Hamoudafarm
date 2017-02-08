@@ -31,11 +31,11 @@ export class NewsFeedComponent implements OnInit {
             this.imgArraylenght = this.img[x].length;
         }
         this.numbers = Array(this.imgArraylenght).fill(this.imgArraylenght).map((x, i)=>i);
-        // this.loading.complete();
+        this.loading.complete();
       }
       , (error)=> {
         console.log("Can not load Donuts : " + error);
-        // this.loading.complete();
+        this.loading.complete();
       }
     );
   }

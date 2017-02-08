@@ -14,6 +14,7 @@ import {SlimLoadingBarModule} from 'ng2-slim-loading-bar';
 import {AuthenticationModule} from './authentication/authentication.module';
 import {loginGuard} from './guards/login';
 import { LostComponent } from './lost/lost.component';
+import {SimpleNotificationsModule} from 'angular2-notifications/src/simple-notifications.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +34,7 @@ import { LostComponent } from './lost/lost.component';
     MainRouting,
     SlimLoadingBarModule,
     AuthenticationModule,
+    SimpleNotificationsModule
   ],
   providers: [loginGuard],
   bootstrap: [AppComponent]
