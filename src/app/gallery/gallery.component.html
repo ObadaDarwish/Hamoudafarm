@@ -12,7 +12,7 @@
         <div *ngFor="let imgArray of numbers;let index=index">
           <div class="col-lg-3 galleryItem" *ngIf="images[index]">
             <img style="width: 50px;height: 50px;margin-top: 25%" *ngIf="spinner" src="../../assets/images/spinner.svg" alt="">
-            <img [hidden]="spinner" (load)="onLoad()" src="../../assets/images/{{images[index]}}" alt="">
+            <img [hidden]="spinner" (load)="onLoad()" src="../../assets/images/Gallery/{{images[index]}}" alt="">
           </div>
         </div>
       </div>

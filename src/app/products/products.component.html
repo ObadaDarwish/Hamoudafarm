@@ -12,7 +12,7 @@
         <div class="Product">
         <div class="productSection"><p>{{product[0]}}</p></div>
           <img style="width: 50px;height: 50px;margin-top: 25%" *ngIf="spinner" src="../../assets/images/spinner.svg" alt="">
-        <img [hidden]="spinner" (load)="onLoad()" src="../../assets/images/grapes.jpg" alt="">
+        <img [hidden]="spinner" (load)="onLoad()" src="../../assets/images/Products/{{product[1]}}" alt="">
         </div>
       </div>
     </div>

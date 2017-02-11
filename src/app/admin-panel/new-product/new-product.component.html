@@ -1,3 +1,16 @@
-<p>
-  new-product works!
-</p>
+<div class="container">
+  <form [formGroup]="Admin" (ngSubmit)="postNewProduct(Admin.value)" >
+    <div class="row">
+      <div class="form-group col-lg-6">
+        <label class="Title "><p class="panelTitle">Product name</p></label>
+        <input type="text" class="form-control adminTextInput" formControlName="Name">
+      </div>
+      <div class="form-group col-lg-6">
+        <label class="Title "><p class="panelTitle">Upload images</p></label>
+        <input type="file" (change)="fileChange($event)" placeholder="Upload file"  class="imageUploader">
+      </div>
+    </div>
+
+    <button [disabled]="false" class="btn btn-primary adminSubmitButton" type="submit" >Submit</button>
+  </form>
+</div>
