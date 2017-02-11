@@ -15,6 +15,7 @@ import {AuthenticationModule} from './authentication/authentication.module';
 import {loginGuard} from './guards/login';
 import { LostComponent } from './lost/lost.component';
 import {SimpleNotificationsModule} from 'angular2-notifications/src/simple-notifications.module';
+import {NotificationsService} from 'angular2-notifications/src/notifications.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +38,7 @@ import {SimpleNotificationsModule} from 'angular2-notifications/src/simple-notif
     SimpleNotificationsModule,
 
   ],
-  providers: [loginGuard],
+  providers: [loginGuard,NotificationsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

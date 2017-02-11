@@ -1,3 +1,25 @@
-<p>
-  new-post works!
-</p>
+<div class="container">
+<form [formGroup]="Admin" (ngSubmit)="postNewPost(Admin.value)" >
+<div class="row">
+  <div class="form-group col-lg-6">
+    <label class="Title "><p class="panelTitle">Post title</p></label>
+    <input type="text" class="form-control adminTextInput" formControlName="title">
+  </div>
+  <div class="form-group col-lg-6">
+    <label class="Title "><p class="panelTitle">Upload images</p></label>
+    <input type="file" (change)="fileChange($event)" placeholder="Upload file" multiple class="imageUploader">
+  </div>
+</div>
+  <div class="row">
+  <div class="form-group col-lg-6">
+    <label class="Title "><p class="panelTitle">Video link</p></label>
+    <input type="text" class="form-control adminTextInput" formControlName="video">
+  </div>
+  <div class="form-group col-lg-6">
+    <label class="Title "><p class="panelTitle">Description</p></label>
+    <textarea  class="form-control adminTextInput" formControlName="description"></textarea>
+  </div>
+  </div>
+  <button [disabled]="false" class="btn btn-primary adminSubmitButton" type="submit" >Submit</button>
+</form>
+</div>

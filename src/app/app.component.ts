@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+
+  public options = {
+    position: ["bottom", "right"],
+    timeOut: 3000,
+  }
 }
