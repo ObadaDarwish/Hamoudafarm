@@ -12,11 +12,25 @@
         <div *ngFor="let imgArray of numbers;let index=index">
           <div class="col-lg-3 galleryItem" *ngIf="images[index]">
             <img style="width: 50px;height: 50px;margin-top: 25%" *ngIf="spinner" src="../../assets/images/spinner.svg" alt="">
-            <img [hidden]="spinner" (load)="onLoad()" src="../../assets/images/Gallery/{{images[index]}}" alt="">
+            <img [hidden]="spinner" (load)="onLoad()" src="../../assets/images/Gallery/{{images[index]}}" alt="" (click)="enlarge(images[index])" class="imageGallery">
           </div>
         </div>
       </div>
     </div>
 
+  </div>
+</div>
+
+
+<div bsModal #enlargeImage="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="enlargeImage" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="enlargeImage.hide()">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </button>
+        <img  src="../../assets/images/Gallery/{{ImageIndex}}" alt="" style="width:100%"/>
+      </div>
+    </div>
   </div>
 </div>

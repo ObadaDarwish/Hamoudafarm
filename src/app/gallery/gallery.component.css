@@ -1,0 +1,14 @@
+.imageGallery:hover{
+  cursor: pointer;
+  border: 1px solid grey;
+}
+.modal-content{
+  background:#333333 ;
+  padding: 0;
+}
+.close{
+  margin-bottom: 2%;
+}
+.fa-times{
+  color: #ffffff;
+}
