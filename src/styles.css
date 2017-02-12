@@ -413,6 +413,7 @@ body{
 }
 .panelTitle{
   font-size: 20px !important;
+  margin-bottom: 4%!important;
 }
 .form-group{
   margin-top: 1%;

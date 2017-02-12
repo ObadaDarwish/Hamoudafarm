@@ -1,0 +1,32 @@
+.losContainer {
+  width: 100%;
+  position: absolute;
+}
+.imagelost {
+  width: 100%;
+  position: absolute;
+}
+
+.textContainer {
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  position: absolute;
+  margin-top: 8%;
+}
+.text404 {
+  font-size: 230px;
+  position: relative;
+  font-family: Vivaldi,font1,sans-serif;
+  color: #ff6000;
+}
+.textError{
+  font-size: 30px;
+  position: relative;
+  font-family: sans-serif;
+  color: #ff6000;
+}
+.textError span{
+  color: red;
+}
+
