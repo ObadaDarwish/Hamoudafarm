@@ -14,7 +14,7 @@ export class GalleryService {
     let options = new RequestOptions({headers: headers});
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');
-    return this.http.get('http://localhost:8000/getGallery', options)
+    return this.http.get('http://localhost:8000/getGallery')
       .map(response => {
         return response.json().Gallery;
       });

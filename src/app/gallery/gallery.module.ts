@@ -8,7 +8,7 @@ import {ModalModule} from 'ng2-bootstrap';
   imports: [
     CommonModule,
     SlimLoadingBarModule,
-    ModalModule
+    ModalModule.forRoot()
   ],
   declarations: [GalleryComponent],
   exports:[GalleryComponent],

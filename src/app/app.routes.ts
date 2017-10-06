@@ -13,13 +13,14 @@ import {loginGuard} from './guards/login';
 import {LostComponent}  from './lost/lost.component';
 import {NewPostComponent} from './admin-panel/new-post/new-post.component';
 import {NewProductComponent} from './admin-panel/new-product/new-product.component';
-
+import {ExportingComponent} from './exporting/exporting.component';
 const MainRoute: Routes = [
   {path: '', redirectTo: 'Home', pathMatch: 'full'},
   {path: 'Home', component:LandingPageComponent },
   {path: 'NewsFeed', component:NewsFeedComponent},
   {path: 'Products', component:ProductsComponent},
   {path: 'Gallery', component:GalleryComponent},
+  {path: 'Exporting', component:ExportingComponent},
   {path: 'login', component:LoginComponent},
   {path: 'AdminPanel', component:AdminPanelComponent, canActivate: [loginGuard],
     children: [

@@ -19,7 +19,7 @@ export class AuthenticationService {
       username: username,
       password: password
     });
-    return this.http.post(`http://localhost:8000/Login`, body, options)
+    return this.http.post(`http://localhost:8000/Login`, body)
       .map(response => {
         return response;
       });

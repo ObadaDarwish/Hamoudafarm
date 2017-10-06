@@ -6,12 +6,15 @@ import {MainRouting} from '../app.routes';
 import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 import {AuthenticationService} from './authentication.service';
 import {GlobalService} from '../global.service';
+import {SimpleNotificationsModule} from 'angular2-notifications/src/simple-notifications.module';
 @NgModule({
   imports: [
     CommonModule,
     MainRouting,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SimpleNotificationsModule,
+
   ],
   declarations: [AuthenticationComponent, LoginComponent],
   providers:[AuthenticationService,GlobalService]

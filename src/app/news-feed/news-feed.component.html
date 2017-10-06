@@ -1,28 +1,61 @@
-<div class="newsFeedBody">
-  <div class="newsfeedBackground"><img src="../../assets/images/background/460-edited.jpg" alt=""></div>
-  <div class="newsfeedPostContainer container">
-    <div class="Post" *ngFor="let posts of NewsFeed;let upperindex=index">
+<!--<div class="newsFeedBody">-->
+  <!--<div class="newsfeedBackground"><img src="../../assets/images/background/460-edited.jpg" alt=""></div>-->
+  <!--<div class="newsfeedPostContainer container">-->
+    <!--<div class="Post" *ngFor="let posts of NewsFeed;let upperindex=index">-->
 
-      <div class="Title newsfeedTitle" *ngIf="posts[0]"><p>{{posts[0]}}
-      </p>
-      </div>
-      <div class="PostPictures" *ngIf="numbers">
-        <div *ngFor="let number of numbers;let index=index">
-          <img *ngIf="img[upperindex][index]" src="../../assets/images/Gallery/{{img[upperindex][index]}}" alt="">
+      <!--<div class="Title newsfeedTitle" *ngIf="posts[0]"><p>{{posts[0]}}-->
+      <!--</p>-->
+      <!--</div>-->
+      <!--<div class="PostPictures" *ngIf="numbers">-->
+        <!--<div *ngFor="let number of numbers;let index=index">-->
+          <!--<img *ngIf="img[upperindex][index]" src="../../assets/images/Gallery/{{img[upperindex][index]}}" alt="">-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="row" *ngIf="posts[2]">-->
+        <!--<iframe [src]="(posts[2]) | safe"></iframe>-->
+      <!--</div>-->
+      <!--<div class="row" *ngIf="posts[3]">-->
+        <!--<div class="col-lg-12  PostCaption"><p>-->
+          <!--{{posts[3]}}-->
+        <!--</p></div>-->
+      <!--</div>-->
+      <!--<div class="row" *ngIf="posts[4]">-->
+        <!--<div class="col-lg-4  PostDate"><p> POSTED ON : {{posts[4]}}-->
+        <!--</p></div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<div class="newsFeedBody">
+  <div class="newsfeedPostContainer">
+    <div class="timeline">
+      <div class="containerTimeline " [ngClass]="{right: odd,left:even}" *ngFor="let posts of NewsFeed;let index=index;let odd=odd;let even=even">
+        <div class="content">
+          <div class="Title newsfeedTitle" *ngIf="posts[0]"><p>{{posts[0]}}
+          </p>
+          </div>
+          <div class="PostPictures" >
+            <div *ngFor="let img of imageArray[index]">
+              <img  src="../../assets/images/Gallery/{{img}}" alt="">
+            </div>
+          </div>
+          <div class="row" *ngIf="posts[2]">
+            <iframe [src]="(posts[2]) | safe"></iframe>
+          </div>
+          <div class="row" *ngIf="posts[3]">
+            <div class="col-lg-12  PostCaption"><p>
+              {{posts[3]}}
+            </p></div>
+          </div>
+          <div class="row" *ngIf="posts[4]">
+            <div class="PostDate"><p> POSTED ON : {{posts[4]}}
+            </p></div>
+          </div>
         </div>
       </div>
-      <div class="row" *ngIf="posts[2]">
-        <iframe [src]="(posts[2]) | safe"></iframe>
-      </div>
-      <div class="row" *ngIf="posts[3]">
-        <div class="col-lg-12  PostCaption"><p>
-          {{posts[3]}}
-        </p></div>
-      </div>
-      <div class="row" *ngIf="posts[4]">
-        <div class="col-lg-4  PostDate"><p> POSTED ON : {{posts[4]}}
-        </p></div>
-      </div>
+
     </div>
   </div>
 </div>
+

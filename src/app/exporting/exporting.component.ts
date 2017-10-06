@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
-import {NotificationsService} from 'angular2-notifications/src/notifications.service';
+import {NotificationsService} from 'angular2-notifications/src/simple-notifications/services/notifications.service';
 import {ExportingService} from './exporting.service';
 
 @Component({

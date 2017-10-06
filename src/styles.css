@@ -1,23 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
-body{
-  background-color: #333333;
+body {
+  background-color: #ebffda;
 }
-#loadingGif
-{
+
+#loadingGif {
   margin-left: 45%;
   margin-top: 20%;
 }
+
 .slim-loading-bar {
   background-color: #ff9100;
 }
 
 /*----------------------header-------------------------*/
-
-.header {
+.headecontainer
+{
+  position: fixed;
   z-index: 4;
-  position: absolute;
   width: 100%;
   height: 80px;
+}
+.header {
+  width: inherit;
+  height: inherit;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -25,37 +30,37 @@ body{
 
 .Headeroverlay {
   background-color: #000000;
-  opacity: 0.3;
   position: absolute;
   width: inherit;
   height: inherit;
   z-index: 1;
 }
-.slim-loading-bar{
- position: relative;
+
+.slim-loading-bar {
+  position: relative;
   background-color: #8e8d91;
 }
+
 .header .navtab {
   z-index: 2;
   height: inherit;
   width: 200px;
-  text-align: center;
-  padding-top: 2%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  transition: background-color 0.4s;
 }
+
 .header .navtab:hover {
-  background-color: #000000;
+  background-color: orange;
   cursor: pointer;
 }
-.header .navtab:hover::after {
-  display: block;
-  content: ' ';
-  height: 2px;
-  width: 100%;
-  background-color: #ff9100;
-  margin-top: 13%;
-}
+
+
+
 .header .navtab a {
   position: relative;
+  align-self: center;
   z-index: 2;
   color: #f5f5f5;
 }
@@ -64,6 +69,109 @@ body{
   color: #ffffff;
 }
 
+/*========================================== Exporting body =========================*/
+
+.Exportingbody {
+  width: 100%;
+  position: absolute;
+  height: 999px;
+}
+
+.exportingBackground {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: inherit;
+}
+
+.exportingOverlay {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: inherit;
+  background-color: black;
+  opacity: 0.4;
+}
+
+.ExportingContainer {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 80%;
+  background-color: rgba(0, 0, 0, .6);
+  margin-top: 10%;
+  margin-left: 10%;
+
+}
+.inputItem :hover{
+  cursor: pointer;
+}
+.inputItem {
+  width: 500px;
+  min-height: 80px;
+  margin-bottom: 1%;
+  padding:2%;
+
+}
+.CustomDropDown{
+  width: 455px;
+  height: 40px;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  color: grey;
+}
+.dropdown-menu{
+  width: 455px;
+}
+.fa-caret-down{
+  float: right;
+  margin: 0%;
+  background-color: #e97f01;
+  padding-left: 4.5%;
+  padding-top: 0%;
+  height: inherit;
+  color: #505151;
+  width: 70px;
+  border-radius: 3px;
+}
+.fa-caret-down:hover{
+  background-color: #e9af0a;
+}
+.inputItem p {
+  color: grey;
+  font-family: Georgia,sans-serif;
+  font-size: 20px;
+  display: inline-block;
+  margin: 1%;
+}
+.exportTextArea {
+  width: 455px;
+  color: grey;
+  font-family: Georgia, sans-serif;
+  font-size: 20px;
+  min-height: 200px;
+}
+.sideInfo{
+  color: #ffffff !important;
+}
+.sideInfo:hover{
+  cursor: text !important;
+}
+.report
+{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.reportItem{
+  width: 200px;
+  height: 50px;
+  color: #ffffff;
+  font-family: Georgia,sans-serif;
+  font-size: 18px;
+}
 /*========================================== landing body =========================*/
 .LandingBody {
   position: relative
@@ -74,7 +182,8 @@ body{
   width: 100%;
 
 }
-.LandingBody .motowrapper{
+
+.LandingBody .motowrapper {
   background-color: #000000;
   text-align: center;
   position: relative;
@@ -83,32 +192,35 @@ body{
   margin-bottom: 1px;
 
 }
-.LandingBody .motoBlock{
+
+.LandingBody .motoBlock {
   margin-left: 32%;
   margin-top: 20%;
   position: absolute;
 }
-.LandingBody .motowrapper p{
+
+.LandingBody .motowrapper p {
   font-size: 27px;
   font-family: Georgia, sans-serif;
   color: #ffffff;
   font-weight: bold;
 }
-.LandingBody #motoLandingText2
-{
+
+.LandingBody #motoLandingText2 {
   width: 550px;
 
 }
-.LandingBody #motoLandingText1
- {
-   width: 400px;
+
+.LandingBody #motoLandingText1 {
+  width: 400px;
   margin-left: 14%;
- }
-.LandingBody #motoLandingText3
-{
+}
+
+.LandingBody #motoLandingText3 {
   margin-left: 23%;
   width: 300px;
 }
+
 .LandingBody span {
   color: orange;
 
@@ -192,28 +304,28 @@ body{
 /*===========news feed post ===============*/
 .newsfeedPostContainer {
   position: relative;
-  margin-left: 12%;
   margin-top: 12%;
-  margin-bottom: 3%;
 }
 
-.newsfeedPostContainer .Post .PostPictures img {
-  width: 300px;
-  height: 300px;
+.newsfeedPostContainer .timeline .PostPictures img {
+  width: 150px;
+  height: 150px;
 }
 
 .newsfeedPostContainer .Post {
   position: relative;
   background-color: #ffffff;
   border: 1px solid #efe7e7;
-  margin-bottom: 2%;
 }
-
+.Post:nth-child(even){
+  background-color: orange;
+}
 .newsfeedPostContainer .PostPictures {
   position: relative;
   display: flex;
   flex-flow: row wrap;
-  justify-content:space-around;
+  justify-content: flex-start;
+  margin-bottom: 2%;
 }
 
 .newsfeedPostContainer .PostPictures div {
@@ -223,13 +335,9 @@ body{
 }
 
 .newsfeedPostContainer .row iframe {
-  width: 650px;
-  height: 315px;
+  width: 100%;
   position: relative;
   display: block;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  margin-left: 22%;
 }
 
 .newsfeedPostContainer .PostCaption {
@@ -246,10 +354,19 @@ body{
 }
 
 .newsfeedPostContainer .PostDate {
-  text-align: center;
   position: relative;
-  display: block;
-  margin-left: 65%;
+  display: flex;
+  justify-content: center;
+}
+.newsfeedPostContainer .PostDate p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  height: 42px;
+  width: 200px;
+  background: orange;
+  border-radius: 8px 8px 0px 0px;
 }
 
 /*======================================================= products view =====================*/
@@ -348,15 +465,15 @@ body{
   width: 100%;
   margin-top: 1%;
 }
+
 /*===========================  Admin page ==============================*/
 
-.AdminBody
-{
+.AdminBody {
   position: absolute;
   width: 100%;
 }
-.AdminNavigation
-{
+
+.AdminNavigation {
   width: 100%;
   background-color: #656464;
   display: flex;
@@ -364,46 +481,58 @@ body{
   justify-content: space-around;
   margin-top: 6%;
 }
-.navItems{
+
+.navItems {
   width: 350px;
   height: 120px;
   margin: 1%;
   text-align: center;
   padding-top: 1.5%;
 }
-.navItems:hover{
+
+.navItems:hover {
   cursor: pointer;
 }
-.navItems p{
+
+.navItems p {
   color: #ffffff;
-  font-family: Georgia,sans-serif;
+  font-family: Georgia, sans-serif;
   font-size: 28px;
 }
-.AdminNavigation .item1{
+
+.AdminNavigation .item1 {
   background-color: #68c9b6;
 }
-.AdminNavigation .item1:hover{
-  background-color:#00d0ff;
+
+.AdminNavigation .item1:hover {
+  background-color: #00d0ff;
 }
-.AdminNavigation .item2{
+
+.AdminNavigation .item2 {
   background-color: #c3ca0a;
 }
-.AdminNavigation .item2:hover{
+
+.AdminNavigation .item2:hover {
   background-color: #00d0ff;
 }
-.AdminNavigation .item3{
+
+.AdminNavigation .item3 {
   background-color: #e27795;
 }
-.AdminNavigation .item3:hover{
+
+.AdminNavigation .item3:hover {
   background-color: #00d0ff;
 }
-.AdminNavigation .item4{
+
+.AdminNavigation .item4 {
   background-color: #a285c5;
 }
-.AdminNavigation .item4:hover{
+
+.AdminNavigation .item4:hover {
   background-color: #00d0ff;
 }
-.adminOutlet{
+
+.adminOutlet {
   position: relative;
   width: 85%;
   margin-top: 2%;
@@ -411,50 +540,53 @@ body{
   background-color: #656464;
 
 }
-.panelTitle{
+
+.panelTitle {
   font-size: 20px !important;
-  margin-bottom: 4%!important;
+  margin-bottom: 4% !important;
 }
-.form-group{
+
+.form-group {
   margin-top: 1%;
   margin-bottom: 1%;
 }
-.adminTextInput{
+
+.adminTextInput {
   margin-top: 3%;
   margin-bottom: 3%;
   color: gray;
-  font-family: georgia,sans-serif;
+  font-family: georgia, sans-serif;
 }
-.imageUploader{
+
+.imageUploader {
   color: #ffffff;
-  font-family: Georgia,sans-serif;
+  font-family: Georgia, sans-serif;
 }
-.adminSubmitButton{
+
+.adminSubmitButton {
   margin-left: 80%;
   margin-bottom: 5%;
 }
-.fa-newspaper-o
-{
+
+.fa-newspaper-o {
   color: #ffffff;
 }
-.fa-shopping-cart
-{
+
+.fa-shopping-cart {
   color: #ffffff;
 }
-.fa-ban{
+
+.fa-ban {
   color: #ffffff;
 }
-  /*===========================  gallery ==============================*/
+
+/*===========================  gallery ==============================*/
 
 .Gallerybody {
   position: absolute;
   width: 100%;
 }
 
-.GalleryBackground {
-  position: absolute;
-  width: 100%;
-}
 
 .Gallerybody img {
   width: 100%;
@@ -462,28 +594,38 @@ body{
 
 .GalleryContainer {
   position: relative;
-  margin-top: 8%;
-  padding: 3%;
+  margin-top: 6%;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .GalleryContainer .row {
-  margin: 0%;
-  padding: 0.5%;
-  padding-top: 2%;
+  margin: 0;
 }
 
 .Gallerybody .GalleryContainer img {
-  width: 95%;
-  height: 230px;
+  width: 449px;
+  height: 380px;
 }
 
 .Gallerybody .GalleryContainer .galleryItem {
-  display: flex;
-  justify-content: center;
   position: relative;
-  margin-bottom: 2%;
 }
 
+.Gallerybody .GalleryContainer .galleryItemOverlay{
+  position: absolute;
+  z-index: 2;
+  opacity: 0.5;
+  background-color: #ffa74c;
+  display: none;
+  transition: width 0.4s,height 0.4s;
+}
+.Gallerybody .GalleryContainer .galleryItem:hover > .galleryItemOverlay
+{
+  width: 449px;
+  height: 380px;
+  display: inline;
+}
 /*============================ adminlogin ==================*/
 .adminloginBody {
   position: relative;
@@ -505,18 +647,21 @@ body{
   margin-top: 6%;
   margin-left: 41%;
 }
-iframe{
-  width:650px;
-  height:315px;
+
+iframe {
+  width: 650px;
+  height: 315px;
 }
+
 /*=======================mobile view ========================================*/
 @media screen and (max-height: 740px) and (max-width: 500px) {
-  .motoBlock{
+  .motoBlock {
     display: none;
   }
-.header{
-  height: 40px;
-}
+
+  .header {
+    height: 40px;
+  }
 
   .LandingBody .newsFeedButton {
     margin-left: 30%;
@@ -535,7 +680,6 @@ iframe{
 
   }
 
-
   .header .navtab {
     width: inherit;
   }
@@ -543,28 +687,34 @@ iframe{
   .header .navtab a {
     font-size: 14px;
   }
+
   .header .navtab:hover::after {
     display: none;
   }
+
   .LandingBody .newsFeedButton {
     margin-left: 30%;
     margin-top: 140%;
   }
-  .GalleryTitle{
+
+  .GalleryTitle {
     margin-left: 20%;
   }
-  .ProductsTitle{
+
+  .ProductsTitle {
     margin-left: 20%;
   }
-  .newsfeedPostContainer{
+
+  .newsfeedPostContainer {
     margin-left: 0%;
   }
-  iframe{
+
+  iframe {
     width: 380px !important;
     margin-left: 0% !important;
   }
-  .newsfeedTitle
-  {
+
+  .newsfeedTitle {
     margin-left: 22%;
   }
 }

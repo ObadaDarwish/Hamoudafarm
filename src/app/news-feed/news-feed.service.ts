@@ -14,7 +14,7 @@ export class NewsFeedService {
     let options = new RequestOptions({headers: headers});
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');
-    return this.http.get('http://localhost:8000/getPosts', options)
+    return this.http.get('http://localhost:8000/getPosts')
       .map(response => {
         return response.json().posts;
       });

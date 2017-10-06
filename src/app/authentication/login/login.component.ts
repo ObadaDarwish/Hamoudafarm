@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Router} from '@angular/router'
 import {AuthenticationService} from '../authentication.service';
+import {NotificationsService} from 'angular2-notifications/src/simple-notifications/services/notifications.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   loginGroup: FormGroup;
 
-  constructor(private fb: FormBuilder, private  authenticate: AuthenticationService, private router: Router) {
+  constructor(private notify:NotificationsService,private fb: FormBuilder, private  authenticate: AuthenticationService, private router: Router) {
     this.loginGroup = fb.group({
       'username': [''],
       'password': [''],
@@ -34,6 +36,7 @@ export class LoginComponent implements OnInit {
       },
       (error)=> {
         console.log('Cannot login', error);
+        this.notify.error('Error','Sorry can not log you in  !!')
       }
     );
 

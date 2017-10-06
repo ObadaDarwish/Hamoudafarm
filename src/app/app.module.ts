@@ -15,14 +15,19 @@ import {AuthenticationModule} from './authentication/authentication.module';
 import {loginGuard} from './guards/login';
 import { LostComponent } from './lost/lost.component';
 import {SimpleNotificationsModule} from 'angular2-notifications/src/simple-notifications.module';
-import {NotificationsService} from 'angular2-notifications/src/notifications.service';
+import {NotificationsService} from 'angular2-notifications/src/simple-notifications/services/notifications.service';
 import {ModalModule} from 'ng2-bootstrap';
-
+import { ExportingComponent } from './exporting/exporting.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {BsDropdownModule } from 'ng2-bootstrap';
+import {DatepickerModule} from 'ng2-bootstrap';
+import {ExportingService} from './exporting/exporting.service';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LostComponent,
+    ExportingComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,14 +38,18 @@ import {ModalModule} from 'ng2-bootstrap';
     NewsFeedModule,
     ProductsModule,
     GalleryModule,
+    BrowserAnimationsModule,
     AdminPanelModule,
     MainRouting,
     SlimLoadingBarModule,
     AuthenticationModule,
     SimpleNotificationsModule,
-    ModalModule
+    ModalModule.forRoot(),
+    BsDropdownModule,
+    DatepickerModule,
+
   ],
-  providers: [loginGuard,NotificationsService],
+  providers: [loginGuard,NotificationsService,ExportingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

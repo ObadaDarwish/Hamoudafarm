@@ -8,29 +8,36 @@ import {SlimLoadingBarService} from 'ng2-slim-loading-bar';
 })
 export class NewsFeedComponent implements OnInit {
   NewsFeed: any;
-  temp: Array<any> = [];
   img: Array<any> = [];
-  imgArraylenght: number = 0;
-  numbers: Array<number>;
+  imageArray: Array<any> = [];
 
-  constructor(private loading:SlimLoadingBarService,private newsfeed: NewsFeedService) {
+  constructor(private loading: SlimLoadingBarService, private newsfeed: NewsFeedService) {
 
   }
 
+  tempIMG: any;
+
   ngOnInit() {
-    this.loading.start(()=>{
+    this.loading.start(()=> {
       console.log('loading');
     });
     this.newsfeed.getNewsFeed().subscribe(
       (newsfeed)=> {
         this.NewsFeed = newsfeed;
-        for (var x = 0; x < newsfeed.length; x++) {
-          this.temp.push(newsfeed[x][1]);
-          this.img.push(this.temp[x].split(","));
-          if (this.imgArraylenght < this.img[x].length)
-            this.imgArraylenght = this.img[x].length;
+        for (var x = 0; x < this.NewsFeed.length; x++) {
+
+          this.tempIMG = this.NewsFeed[x][1].split(",");
+          for (var y = 0; y < this.tempIMG.length; y++) {
+            if (this.tempIMG[y] == '') {
+              this.tempIMG.splice(y, 1);
+            } else {
+              this.img.push(this.tempIMG[y]);
+            }
+          }
+          this.imageArray.push(this.img);
+          this.img = [];
+          this.tempIMG = [];
         }
-        this.numbers = Array(this.imgArraylenght).fill(this.imgArraylenght).map((x, i)=>i);
         this.loading.complete();
       }
       , (error)=> {
