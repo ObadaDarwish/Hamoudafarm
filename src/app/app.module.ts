@@ -46,7 +46,7 @@ import {ExportingService} from './exporting/exporting.service';
     SimpleNotificationsModule,
     ModalModule.forRoot(),
     BsDropdownModule,
-    DatepickerModule,
+    DatepickerModule.forRoot(),
 
   ],
   providers: [loginGuard,NotificationsService,ExportingService],

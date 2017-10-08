@@ -22,7 +22,7 @@ export class ExportingService {
       quantity:quantity
 
     };
-     return this.http.post('http://localhost:8000/exportingRequest',body,options)
+     return this.http.post('http://localhost:8000/exportingRequest',body)
       .map(response => {
       return response;
     });

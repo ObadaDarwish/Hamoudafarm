@@ -167,7 +167,7 @@ body {
 }
 .reportItem{
   width: 200px;
-  height: 50px;
+  min-height: 50px;
   color: #ffffff;
   font-family: Georgia,sans-serif;
   font-size: 18px;
@@ -598,7 +598,10 @@ body {
   display: flex;
   flex-flow: row wrap;
 }
-
+.GalleryContainer .OuterItemWrap{
+  display: flex;
+  flex-flow: row wrap;
+}
 .GalleryContainer .row {
   margin: 0;
 }

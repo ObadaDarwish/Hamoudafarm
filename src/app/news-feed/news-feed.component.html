@@ -37,7 +37,7 @@
           </div>
           <div class="PostPictures" >
             <div *ngFor="let img of imageArray[index]">
-              <img  src="../../assets/images/Gallery/{{img}}" alt="">
+              <img  src="{{globalService.globalDomain}}/storage/{{img}}" alt="">
             </div>
           </div>
           <div class="row" *ngIf="posts[2]">

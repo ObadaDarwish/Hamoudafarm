@@ -2,12 +2,11 @@
 
   <div class="GalleryContainer "*ngIf="isImageLoaded ;else load">
 
-      <div *ngFor="let images of img">
-          <div class=" galleryItem" >
+          <div class="galleryItem" *ngFor="let images of img">
             <div class="galleryItemOverlay"></div>
-            <img  src="../../assets/images/Gallery/{{images}}" alt="" (click)="enlarge(images)" class="imageGallery">
+            <img  src="{{globalService.globalDomain}}/storage/{{images}}"  alt="" (click)="enlarge(images)" class="imageGallery">
           </div>
-      </div>
+
 
   </div>
   <ng-template #load>
