@@ -30,6 +30,7 @@
 <div class="newsFeedBody">
   <div class="newsfeedPostContainer">
     <div class="timeline">
+      <div *ngIf="!globalService.loadingIndicator; else loadTimeline">
       <div class="containerTimeline " [ngClass]="{right: odd,left:even}" *ngFor="let posts of NewsFeed;let index=index;let odd=odd;let even=even">
         <div class="content">
           <div class="Title newsfeedTitle" *ngIf="posts[0]"><p>{{posts[0]}}
@@ -54,7 +55,10 @@
           </div>
         </div>
       </div>
-
+      </div>
+      <ng-template #loadTimeline>
+        <app-loading-indicator></app-loading-indicator>
+      </ng-template>
     </div>
   </div>
 </div>

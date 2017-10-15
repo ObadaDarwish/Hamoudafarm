@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {BsDropdownModule } from 'ng2-bootstrap';
 import {DatepickerModule} from 'ng2-bootstrap';
 import {ExportingService} from './exporting/exporting.service';
+import { LoadingIndicatorModule } from './loading-indicator/loading-indicator.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import {ExportingService} from './exporting/exporting.service';
     ExportingComponent,
   ],
   imports: [
+    LoadingIndicatorModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

@@ -12,7 +12,8 @@ export class NewsFeedComponent implements OnInit {
   img: Array<any> = [];
   imageArray: Array<any> = [];
 
-  constructor(public globalService:GlobalService,private loading: SlimLoadingBarService, private newsfeed: NewsFeedService) {
+
+  constructor(public globalService: GlobalService, private loading: SlimLoadingBarService, private newsfeed: NewsFeedService) {
 
   }
 
@@ -22,6 +23,7 @@ export class NewsFeedComponent implements OnInit {
     this.loading.start(()=> {
       console.log('loading');
     });
+    this.globalService.loadingIndicator=true;
     this.newsfeed.getNewsFeed().subscribe(
       (newsfeed)=> {
         this.NewsFeed = newsfeed;
@@ -40,10 +42,12 @@ export class NewsFeedComponent implements OnInit {
         }
         console.log(this.imageArray);
         this.loading.complete();
+        this.globalService.loadingIndicator=false;
       }
       , (error)=> {
         console.log("Can not load Donuts : " + error);
         this.loading.complete();
+        this.globalService.loadingIndicator=false;
       }
     );
   }

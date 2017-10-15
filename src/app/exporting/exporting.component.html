@@ -19,10 +19,7 @@
       <div class="form-group">
         <label for="product">Products</label>
         <select id="product" class="form-control" [(ngModel)]="product">
-          <option value="" selected disabled hidden>Products</option>
-          <option value="Banana">Banana</option>
-          <option value="Apples">Apples</option>
-          <option value="Grapes">Grapes</option>
+          <option value="{{viewProduct[0]}}" *ngFor="let viewProduct of products">{{viewProduct[0]}}</option>
         </select>
       </div>
     </div>
@@ -46,7 +43,7 @@
         <textarea id="details" placeholder="Extra details." class="exportTextArea" [(ngModel)]="details"></textarea>
       </div>
     </div>
-    <div class="inputItem">
+    <div class="ViewReport">
       <div class="report">
         <div class="reportItem">Name:</div>
         <div class="reportItem">{{name}}</div>
@@ -62,8 +59,8 @@
         <div class="reportItem">{{details}}</div>
       </div>
     </div>
-    <div class="inputItem">
-      <button class="btn btn-warning" (click)="ExpoertRequest()">Submit</button>
+    <div class="inputItem" style="width: 100%">
+      <button style=" width: 100%;" class="btn btn-success" (click)="ExpoertRequest()">Submit</button>
     </div>
     <div class="inputItem  ">
       <p class="sideInfo">* We typically respond within 24 hours</p>

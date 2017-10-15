@@ -1,17 +1,28 @@
 <div class="ProductBody">
   <div class="ProductBodyBackground">
-
+    <!--<img src="../../assets/images/Gallery/427photo.jpg" alt="">-->
+    <div class="ProductOverlay"></div>
+  </div>
   <div class="ProductBodyContainer container-fluid">
-    <div class="row">
-    <div *ngFor="let product of products">
-      <div class="col-lg-4">
-        <div class="Product">
-        <div class="productSection"><p>{{product[0]}}</p></div>
-          <img style="width: 50px;height: 50px;margin-top: 25%" *ngIf="spinner" src="../../assets/images/spinner.svg" alt="">
-        <img [hidden]="spinner" (load)="onLoad()" src="../../assets/images/Products/{{product[1]}}" alt="">
+
+    <div class="ProductsContainer" *ngIf="!globalService.loadingIndicator;else load">
+
+      <div class="Product" *ngFor="let product of products">
+        <img src="{{globalService.globalDomain}}/storage/{{product[1]}}" alt="">
+        <div class="info">
+          <p *ngIf="product[0]">{{product[0]}}</p>
+          <p *ngIf="product[2]">{{product[2]}}</p>
+        </div>
+        <div class="productSection">
+          <div class="stastics">
+            <p *ngIf="product[3]"><i class="fa fa-shopping-basket" aria-hidden="true"></i> {{product[3]}} Tons/Year</p>
+            <div *ngIf="product[3]"  class="verticalLine"></div>
+            <p >100 <i class="fa fa-percent" aria-hidden="true"></i> Organic</div>
+          </div>
         </div>
       </div>
+      <ng-template #load>
+        <app-loading-indicator style=" position: relative;margin-top: 10%;width: 100%;"></app-loading-indicator>
+      </ng-template>
     </div>
-</div>
   </div>
-</div>

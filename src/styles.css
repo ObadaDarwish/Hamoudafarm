@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-color: #ebffda;
+  background-color: #e6ffca;
 }
 
 #loadingGif {
@@ -17,6 +17,7 @@ body {
 {
   position: fixed;
   z-index: 4;
+  top:0;
   width: 100%;
   height: 80px;
 }
@@ -25,11 +26,22 @@ body {
   height: inherit;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: flex-end;
 }
-
+.header .hidetab{
+  display: block;
+}
+.header .viewTab{
+  display: none;
+}
+.header .line{
+  width: 25px;
+  height: 4px;
+  background: #ffffff;
+  margin-bottom: 2px;
+}
 .Headeroverlay {
-  background-color: #000000;
+  background-color: #84b367;
   position: absolute;
   width: inherit;
   height: inherit;
@@ -50,9 +62,14 @@ body {
   justify-content: center;
   transition: background-color 0.4s;
 }
-
+.header .loginClass{
+  width: 100px!important;
+}
+.header .loginClass:hover{
+  background-color: #84b367 !important;
+}
 .header .navtab:hover {
-  background-color: orange;
+  background-color: #3c7d01;
   cursor: pointer;
 }
 
@@ -85,12 +102,12 @@ body {
 }
 
 .exportingOverlay {
-  position: absolute;
-  z-index: 2;
-  width: 100%;
-  height: inherit;
-  background-color: black;
-  opacity: 0.4;
+  /*position: absolute;*/
+  /*z-index: 2;*/
+  /*width: 100%;*/
+  /*height: inherit;*/
+  /*background-color: black;*/
+  /*opacity: 0.4;*/
 }
 
 .ExportingContainer {
@@ -114,6 +131,10 @@ body {
   margin-bottom: 1%;
   padding:2%;
 
+}
+.ViewReport{
+  width: 100%;
+  background: #3a3730;
 }
 .CustomDropDown{
   width: 455px;
@@ -147,7 +168,7 @@ body {
   margin: 1%;
 }
 .exportTextArea {
-  width: 455px;
+  width: 100%;
   color: grey;
   font-family: Georgia, sans-serif;
   font-size: 20px;
@@ -163,10 +184,11 @@ body {
 {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: center;
+  padding: 10px;
 }
 .reportItem{
-  width: 200px;
+  width: 40%;
   min-height: 50px;
   color: #ffffff;
   font-family: Georgia,sans-serif;
@@ -184,7 +206,7 @@ body {
 }
 
 .LandingBody .motowrapper {
-  background-color: #000000;
+  background-color: #476138;;
   text-align: center;
   position: relative;
   padding: 10px;
@@ -194,8 +216,11 @@ body {
 }
 
 .LandingBody .motoBlock {
-  margin-left: 32%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   margin-top: 20%;
+  width: 100%;
   position: absolute;
 }
 
@@ -222,7 +247,7 @@ body {
 }
 
 .LandingBody span {
-  color: orange;
+  color: #bcff93;
 
 }
 
@@ -267,12 +292,12 @@ body {
   position: absolute;
   margin-top: 53%;
   margin-left: 41%;
-  background-color: #000000;
+  background-color: #476138;
   border-radius: 5px;
 }
 
 .LandingBody .newsFeedButton:hover {
-  background-color: #f08400;
+  background-color: #84b367;
   cursor: pointer;
 }
 
@@ -288,7 +313,7 @@ body {
 
 /*========================================= news feed =======================================*/
 .newsFeedBody {
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 
@@ -329,9 +354,7 @@ body {
 }
 
 .newsfeedPostContainer .PostPictures div {
-  margin-top: 1%;
-  margin-bottom: 1%;
-
+  margin: 0.3%;
 }
 
 .newsfeedPostContainer .row iframe {
@@ -364,8 +387,9 @@ body {
   justify-content: center;
   margin-bottom: 0;
   height: 42px;
-  width: 200px;
-  background: orange;
+  width: 260px;
+  color: #ffffff;
+  background: #84b367;
   border-radius: 8px 8px 0px 0px;
 }
 
@@ -375,43 +399,100 @@ body {
 }
 
 .ProductBody .ProductBodyBackground {
-  position: absolute;
   width: 100%;
 }
 
+
 .ProductBody .ProductBodyBackground img {
   width: 100%;
+  position: absolute;
+  z-index: 1;
 }
 
 .ProductBody .ProductBodyContainer {
   margin-top: 12%;
   width: 100%;
   position: absolute;
+  z-index: 3;
 }
 
-.ProductBody .ProductBodyContainer .row {
+.ProductBody .ProductBodyContainer  {
   width: 100%;
   margin-left: 0;
 }
-
+.ProductBody .ProductsContainer{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding-left: 35px;
+}
 .ProductBody .Product {
+  position: relative;
   text-align: center;
-  background-color: rgb(247, 156, 28);
-  height: 310px;
-  padding-top: 1.5%;
+  width: 300px;
   margin: 5px;
-  margin-bottom: 10%;
+  align-self: flex-start;
+}
+.Product .stastics{
+  background: #ffffff;
+  box-shadow: 0px 0px 4px 1px #2c5611;
+  display: flex;
+  flex-flow: row nowrap;
+  height:60px !important;
+}
+.stastics .verticalLine{
+  background: gray;
+  width: 3px;
+  height: 45px;
+  align-self: center;
+}
+.Product .stastics p{
+  color: gray !important;
+  width: 100% !important;
+  padding:0 !important;
+  margin: 0!important;
+  align-self: center;
 }
 
 .ProductBody .Product img {
+  position: relative;
   width: 100%;
-  height: 250px;
+  height: 270px;
 }
+
+
 
 .ProductBody .Product .productSection {
   width: 100%;
-  margin-top: 4%;
+  min-height: 100px;
+ }
+
+.ProductBody .Product  .info
+{
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+  width: 300px;
+  height: 270px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  opacity: 0;
+  background: rgba(89, 144, 55, 0.5);
+  transition: opacity 0.4s;
 }
+.ProductBody .Product .info:hover{
+  opacity: 1;
+}
+
+.ProductBody .Product  .info p
+{
+  padding-bottom: 5%;
+  padding-top: 3%;
+  margin-bottom: 0;
+  background: rgba(137, 185, 107,1);
+}
+
 
 .ProductBody .Product p {
   color: #ffffff;
@@ -583,7 +664,7 @@ body {
 /*===========================  gallery ==============================*/
 
 .Gallerybody {
-  position: absolute;
+  position: relative;
   width: 100%;
 }
 
@@ -619,7 +700,7 @@ body {
   position: absolute;
   z-index: 2;
   opacity: 0.5;
-  background-color: #ffa74c;
+  background-color: #1b3c07;
   display: none;
   transition: width 0.4s,height 0.4s;
 }
@@ -682,7 +763,12 @@ iframe {
     height: 736px;
 
   }
-
+  .header .hidetab{
+    display: none;
+  }
+  .header .viewTab{
+    display: block;
+  }
   .header .navtab {
     width: inherit;
   }
@@ -719,5 +805,9 @@ iframe {
 
   .newsfeedTitle {
     margin-left: 22%;
+  }
+  .ExportingContainer{
+    margin-left: 0 !important;
+    width: 100% !important;
   }
 }

@@ -1,29 +1,16 @@
 <div class="Gallerybody">
 
-  <div class="GalleryContainer "*ngIf="isImageLoaded ;else load">
-
-          <div class="galleryItem" *ngFor="let images of img">
-            <div class="galleryItemOverlay"></div>
-            <img  src="{{globalService.globalDomain}}/storage/{{images}}"  alt="" (click)="enlarge(images)" class="imageGallery">
-          </div>
-
-
-  </div>
-  <ng-template #load>
-    <img style="width: 50px;height: 50px;margin-top: 25%"  src="../../assets/images/spinner.svg" alt="">
-  </ng-template>
-</div>
-
-
-<div bsModal #enlargeImage="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="enlargeImage" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close pull-right" aria-label="Close" (click)="enlargeImage.hide()">
-          <i class="fa fa-times" aria-hidden="true"></i>
-        </button>
-        <img  src="../../assets/images/Gallery/{{ImageIndex}}" alt="" style="width:100%"/>
-      </div>
+  <div class="GalleryContainer ">
+    <div *ngIf="!globalService.loadingIndicator ;else load"></div>
+    <div class="galleryItem" *ngFor="let images of img">
+      <div class="galleryItemOverlay"></div>
+      <img src="{{globalService.globalDomain}}/storage/{{images}}" alt="" class="imageGallery">
     </div>
+
+    <ng-template #load>
+      <app-loading-indicator style=" position: relative;margin-top: 10%;width: 100%;"></app-loading-indicator>
+    </ng-template>
   </div>
+
 </div>
+
