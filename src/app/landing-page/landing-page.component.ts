@@ -14,20 +14,20 @@ import {
   animations: [trigger('Firstmoto', [
     state('inactive',style({'margin-left':'-150%'})),
     state('active',style({'margin-left':'14%'})),
-    transition('inactive => active', animate('600ms ease-in')),
-    transition('active => inactive', animate('600ms ease-out'))
+    transition('inactive => active', animate('700ms ease-in')),
+    transition('active => inactive', animate('700ms ease-out'))
   ]),
     trigger('Secondmoto', [
       state('inactive',style({'margin-left':'-150%'})),
       state('active',style({'margin-left':'14%'})),
-      transition('inactive => active', animate('600ms ease-in')),
-      transition('active => inactive', animate('600ms ease-out'))
+      transition('inactive => active', animate('700ms ease-in')),
+      transition('active => inactive', animate('700ms ease-out'))
     ]),
     trigger('Thirdmoto', [
       state('inactive',style({'margin-left':'-150%'})),
       state('active',style({'margin-left':'14%'})),
-      transition('inactive => active', animate('600ms ease-in')),
-      transition('active => inactive', animate('600ms ease-out'))
+      transition('inactive => active', animate('700ms ease-in')),
+      transition('active => inactive', animate('700ms ease-out'))
     ]),
   ]
 })
@@ -46,10 +46,10 @@ export class LandingPageComponent implements OnInit {
     }, 500);
     setTimeout(()=> {
       this.moto2 = 'active';
-    }, 600);
+    }, 650);
     setTimeout(()=> {
       this.moto3 = 'active';
-    }, 700);
+    }, 800);
   }
 
 }

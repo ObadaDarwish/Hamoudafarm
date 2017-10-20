@@ -9,7 +9,7 @@ import {GlobalService} from '../global.service';
 })
 export class NewsFeedComponent implements OnInit {
   NewsFeed: any;
-  img: Array<any> = [];
+  tempImg:  Array<any> = [];
   imageArray: Array<any> = [];
 
 
@@ -17,17 +17,15 @@ export class NewsFeedComponent implements OnInit {
 
   }
 
-  tempIMG: any;
 
   ngOnInit() {
     this.loading.start(()=> {
       console.log('loading');
     });
-    this.globalService.loadingIndicator=true;
+    this.globalService.loadingIndicator = true;
     this.newsfeed.getNewsFeed().subscribe(
       (newsfeed)=> {
         this.NewsFeed = newsfeed;
-
         for (var x = 0; x < this.NewsFeed.length; x++) {
 
           // this.tempIMG = this.NewsFeed[x][1];
@@ -38,16 +36,16 @@ export class NewsFeedComponent implements OnInit {
           //     this.img.push(this.tempIMG[y]);
           //   }
           // }
-          this.imageArray.push(JSON.parse(this.NewsFeed[x][1]));
+          this.tempImg.push(JSON.parse(this.NewsFeed[x][1]));
         }
-        console.log(this.imageArray);
+        this.imageArray=this.tempImg.reverse();
         this.loading.complete();
-        this.globalService.loadingIndicator=false;
+        this.globalService.loadingIndicator = false;
       }
       , (error)=> {
         console.log("Can not load Donuts : " + error);
         this.loading.complete();
-        this.globalService.loadingIndicator=false;
+        this.globalService.loadingIndicator = false;
       }
     );
   }

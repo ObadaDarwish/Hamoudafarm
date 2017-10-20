@@ -25,6 +25,7 @@
     "@nglibs/meta": "^0.4.0-rc.1",
     "angular2-google-maps": "^0.17.0",
     "angular2-jwt": "latest",
+    "angular2-moment": "^1.7.0",
     "angular2-notifications": "^0.7.4",
     "angulartics2": "^2.2.1",
     "bootstrap": "^3.3.7",

@@ -16,6 +16,7 @@ export class GalleryComponent implements OnInit {
 
   ImageIndex: any;
   tempIMG: any;
+
   constructor(public globalService: GlobalService, private loading: SlimLoadingBarService, private gallery: GalleryService) {
     this.temp = [];
     this.img = [];
@@ -23,7 +24,7 @@ export class GalleryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.globalService.loadingIndicator=true;
+    this.globalService.loadingIndicator = true;
     this.loading.start(()=> {
       console.log('loading')
     });
@@ -32,22 +33,24 @@ export class GalleryComponent implements OnInit {
         this.Gallery = gallery;
         console.log(this.Gallery);
         for (var x = 0; x < this.Gallery.length; x++) {
-          this.tempIMG=JSON.parse(this.Gallery[x][0]);
-          for (var y = 0; y < JSON.parse(this.Gallery[x][0]).length; y++) {
-            this.img.push(this.tempIMG[y]);
+          if (this.Gallery[x][0]) {
+            this.tempIMG = JSON.parse(this.Gallery[x][0]);
+            for (var y = 0; y < JSON.parse(this.Gallery[x][0]).length; y++) {
+              this.img.push(this.tempIMG[y]);
+            }
           }
+
         }
         this.loading.complete();
-        this.globalService.loadingIndicator=false;
+        this.globalService.loadingIndicator = false;
       }
       , (error)=> {
-        this.globalService.loadingIndicator=false;
+        this.globalService.loadingIndicator = false;
         console.log("Can not load Gallery : " + error);
         this.loading.complete();
       }
     );
   }
-
 
 
 }

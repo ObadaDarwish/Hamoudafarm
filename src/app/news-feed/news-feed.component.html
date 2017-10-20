@@ -31,7 +31,7 @@
   <div class="newsfeedPostContainer">
     <div class="timeline">
       <div *ngIf="!globalService.loadingIndicator; else loadTimeline">
-      <div class="containerTimeline " [ngClass]="{right: odd,left:even}" *ngFor="let posts of NewsFeed;let index=index;let odd=odd;let even=even">
+      <div class="containerTimeline " [ngClass]="{right: odd,left:even}" *ngFor="let posts of NewsFeed | sort ;let index=index;let odd=odd;let even=even">
         <div class="content">
           <div class="Title newsfeedTitle" *ngIf="posts[0]"><p>{{posts[0]}}
           </p>
@@ -50,7 +50,7 @@
             </p></div>
           </div>
           <div class="row" *ngIf="posts[4]">
-            <div class="PostDate"><p> POSTED ON : {{posts[4]}}
+            <div class="PostDate"><p> Since : {{posts[4] | amTimeAgo}}
             </p></div>
           </div>
         </div>

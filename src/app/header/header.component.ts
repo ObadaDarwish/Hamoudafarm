@@ -18,4 +18,7 @@ export class HeaderComponent implements OnInit {
     window.open(this.globalService.globalDomain + '/admin', "_blank");
   }
 
+  Contact() {
+    window.scroll(0, 100000);
+  }
 }
