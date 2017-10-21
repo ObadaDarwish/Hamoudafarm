@@ -1,3 +1,4 @@
+<form [formGroup]="exportingform" (ngSubmit)="ExportRequest(exportingform.value , exportingform.valid)">
 <div class="Exportingbody">
   <img class="exportingBackground" src="../../assets/images/background/container.jpg" alt="">
   <div class="exportingOverlay"></div>
@@ -5,67 +6,72 @@
 
     <div class="inputItem">
       <div class="form-group">
-        <label for="name">Full Name</label>
-        <input id="name" type="text" placeholder="Eg: John Davidson" [(ngModel)]="name" class="form-control">
+        <span> </span>
+        <label for="name">Full Name <span>*</span></label>
+        <input id="name" type="text" placeholder="Eg: John Davidson" formControlName="name"  class="form-control">
       </div>
     </div>
     <div class="inputItem">
       <div class="form-group">
-        <label for="email">Email Address</label>
-        <input id="email" type="email" placeholder="Eg: example@hotmail.com" [(ngModel)]="email" class="form-control">
+        <label for="email">Email Address <span>*</span></label>
+        <input id="email" type="email" placeholder="Eg: example@hotmail.com" formControlName="email"  class="form-control">
       </div>
     </div>
     <div class="inputItem">
       <div class="form-group">
-        <label for="product">Products</label>
-        <select id="product" class="form-control" [(ngModel)]="product">
+        <label for="product">Products <span>*</span></label>
+        <select id="product" class="form-control" formControlName="product" >
           <option value="{{viewProduct[0]}}" *ngFor="let viewProduct of products">{{viewProduct[0]}}</option>
         </select>
       </div>
     </div>
     <div class="inputItem">
       <div class="form-group">
-        <label for="quantity">Quantity</label>
-        <input id="quantity" type="number" placeholder="Eg: 1" min="1" class="form-control" [(ngModel)]="quantity">
+        <label for="quantity">Quantity <span>*</span></label>
+        <input id="quantity" type="text" placeholder="Eg: 1 Ton | 10 Kg" min="1" class="form-control" formControlName="quantity">
       </div>
 
     </div>
     <div class="inputItem">
       <div class="form-group">
-        <label for="date">Due Date</label>
-        <datepicker id="date" [(ngModel)]="date" [minDate]="minDate" [showWeeks]="true"
-                    [dateDisabled]="dateDisabled"></datepicker>
+        <label for="date">Due Date <span>*</span></label>
+        <datepicker id="date"  [minDate]="minDate" [showWeeks]="true"
+                    formControlName="date"   ></datepicker>
       </div>
     </div>
     <div class="inputItem">
       <div class="form-group">
         <label for="details">Extra Details</label>
-        <textarea id="details" placeholder="Extra details." class="exportTextArea" [(ngModel)]="details"></textarea>
+        <textarea id="details" placeholder="Extra details." class="exportTextArea" formControlName="details" ></textarea>
       </div>
     </div>
     <div class="ViewReport">
       <div class="report">
         <div class="reportItem">Name:</div>
-        <div class="reportItem">{{name}}</div>
+        <div class="reportItem">{{exportingform.value.name}}</div>
         <div class="reportItem">Email:</div>
-        <div class="reportItem">{{email}}</div>
+        <div class="reportItem">{{exportingform.value.email}}</div>
         <div class="reportItem">Product:</div>
-        <div class="reportItem">{{product}}</div>
+        <div class="reportItem">{{exportingform.value.product}}</div>
         <div class="reportItem">Quantity:</div>
-        <div class="reportItem">{{quantity}}</div>
+        <div class="reportItem">{{exportingform.value.quantity}}</div>
         <div class="reportItem">Date:</div>
-        <div class="reportItem">{{date | date:'fullDate'}}</div>
+        <div class="reportItem">{{exportingform.value.date | date:'fullDate'}}</div>
         <div class="reportItem">Details:</div>
-        <div class="reportItem">{{details}}</div>
+        <div class="reportItem">{{exportingform.value.details}}</div>
       </div>
     </div>
     <div class="inputItem" style="width: 100%">
-      <button style=" width: 100%;" class="btn btn-success" (click)="ExpoertRequest()">Submit</button>
+      <input  type="submit" class="sumbitButton" value="Submit"
+             [ngClass]="{'disabled' : exportingform.invalid || isloading , 'active' : exportingform.valid}"
+             [disabled]="exportingform.invalid ||isloading"/>
     </div>
     <div class="inputItem  ">
-      <p class="sideInfo">* We typically respond within 24 hours</p>
+      <p class="sideInfo"> We typically respond within 24 hours</p>
+      <p class="sideInfo">* Required fields</p>
     </div>
 
   </div>
 
 </div>
+</form>

@@ -148,16 +148,13 @@ button.active{
 
 }
 
-.inputItem :hover {
-  cursor: pointer;
-}
 
 .inputItem {
   width: 500px;
   min-height: 80px;
   margin-bottom: 1%;
   padding: 2%;
-
+  text-align: center;
 }
 
 .ViewReport {
