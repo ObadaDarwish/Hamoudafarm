@@ -24,12 +24,14 @@ table {
 th, td {
   color: #ffffff !important;
 }
-button.active{
+
+button.active {
   background: #84b367 !important;
   color: #ffffff;
 }
+
 .text-info {
-  color: #6b6b6b!important;
+  color: #6b6b6b !important;
 }
 
 .headecontainer {
@@ -148,6 +150,29 @@ button.active{
 
 }
 
+.sumbitButton {
+  width: 100%;
+  margin-top: 8%;
+  background: #8BC34A;
+  color: #ffffff;
+  height: 40px;
+  border-radius: 33px;
+  border: none;
+}
+
+.sumbitButton:hover {
+  background: #79ab3f;
+  cursor: pointer;
+}
+
+.sumbitButton.disabled {
+  background: #aba8a8;
+  cursor: not-allowed;
+}
+
+.sumbitButton.active {
+  background: #8BC34A;
+}
 
 .inputItem {
   width: 500px;
@@ -354,7 +379,7 @@ button.active{
   height: 2px;
   width: 50%;
   margin-left: 25%;
-  background: #b4ff86;
+  background: #ffffff;
   content: ' ';
 }
 
@@ -381,7 +406,6 @@ button.active{
 }
 
 .LandingBody .sixthContainer .about_us {
-  height: 415px;
   background: #6a9053;
   display: flex;
   flex-flow: column;
@@ -405,7 +429,7 @@ button.active{
   height: 2px;
   width: 50%;
   margin-left: 25%;
-  background: #b4ff86;
+  background: #ffffff;
   content: ' ';
 }
 
@@ -413,11 +437,25 @@ button.active{
   font-family: Georgia, sans-serif;
   color: #ffffff;
   font-size: 20px;
-  text-align: center;
+  display: flex;
+  flex-flow: row;
   background: #6a9053;
-
   padding: 2%;
+  justify-content: space-around;
+}
 
+.about_us .about_us_details .about_us_img img {
+  width: 350px;
+  height: 350px;
+  border-radius: 250px;
+}
+.about_us .about_us_details .about_us_description{
+  width: 60%;
+  padding-top: 2%;
+}
+.about_us_description p{
+  color: #ffffff;
+  text-align: center;
 }
 
 .LandingBody .seventhContainer {
@@ -579,12 +617,16 @@ button.active{
   padding: 14px;
   padding-left: 40px;
   padding-right: 40px;
+  transition: padding 0.5s;
 }
 
 .LandingBody .news_feed .news_feed_description:hover {
   background: #476138;
   cursor: pointer;
   border: #476138;
+  padding: 16px;
+  padding-left: 45px;
+  padding-right: 45px;
 }
 
 @font-face {

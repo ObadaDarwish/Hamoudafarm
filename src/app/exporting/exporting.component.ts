@@ -42,6 +42,7 @@ export class ExportingComponent implements OnInit {
     this.loading.start(()=> {
       console.log('Loading');
     });
+
     if (valid) {
       this.exporting.postExportingRequest(this.exportingform.value.name, this.exportingform.value.email, this.exportingform.value.product,
         this.exportingform.value.date, this.exportingform.value.details, this.exportingform.value.quantity,
